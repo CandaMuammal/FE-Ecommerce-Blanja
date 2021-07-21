@@ -1,0 +1,118 @@
+.responsive-maincontainer {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .responsive-maincontainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .responsive-rightside {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        align-items: center;
+    }
+
+    .responsive-title {
+        display: flex;
+        justify-content: center;
+        margin-left: 10%;
+        margin-top: 0px;
+    }
+
+    .responsive-rightbody {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .responsive-rightbody img {
+        width: 200px;
+        height: 200px;
+        margin: 10px 0px 10px 10%;
+    }
+
+    .responsive-rightbody button {
+        height: 40px;
+        width: 150px;
+        border-radius: 30px;
+        background: #f6f6f6;
+        border: 1px solid gray;
+        margin-bottom: 30px;
+        margin-left: 10%;
+    }
+
+    .responsive-leftbody {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+
+    .responsive-leftbody label {
+        /* width: 30%; */
+        display: flex;
+        /* margin-right: 30px; */
+        font-size: 18px;
+        justify-content: flex-start;
+    }
+    
+    .responsive-leftbody input {
+        width: 320px;
+        height: 35px;
+        padding-left: 10px;
+        margin-left: 10px;
+    }
+
+    .responsive-name {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .responsive-email {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .responsive-phone {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .responsive-store {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .responsive-store input {
+        height: 80px;
+    }
+
+    .responsive-save {
+        width: 250px;
+        height: 40px;
+        background: #DB3022;
+        color: white;
+        border-radius: 30px;
+        margin-left: 20%;
+        margin-bottom: 50px;
+    }
+
+}

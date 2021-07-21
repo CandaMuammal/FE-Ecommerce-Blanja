@@ -1,0 +1,91 @@
+.main-wrap {
+    width: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center ;
+    margin-top: 50px;
+}
+
+.title-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.title-new, .title-popular {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+h2, h5 {
+    margin: 5px;
+}
+
+h2 {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.cardwrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 576px) {
+    .main-wrap {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+    }
+    
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center ;
+        margin-top: 50px;
+    }
+    
+    .title-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .title-new, .title-popular {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+    }
+    
+    h2, h5 {
+        margin: 5px;
+    }
+    
+    h2 {
+        margin-top: 50px;
+        font-size: 30px;
+    }
+    
+    .cardwrapper {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}

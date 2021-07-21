@@ -1,0 +1,261 @@
+.rightside {
+    width: 73%;
+    height: 2000px;
+    background-color:#F5F5F5;
+    padding: 3% 10% 0 3%;
+    margin-left: 10%;
+    
+    /* background-color: violet; */
+}
+
+
+.rightside input, .rightside label {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.box1 {
+    width: 850px;
+    height: 234px;
+    border: 1px solid gray;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    background-color: white;
+    /* justify-content: space-between; */
+}
+
+.inventory {
+    width: 100%;
+    border-bottom: 2px solid gray;
+    height: 84px;
+}
+
+.inventory h2 {
+    margin: 35px 0 0 20px;
+    
+}
+
+.box1 form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0 0 20px ;
+}
+
+.box1 input {
+    width: 348px;
+    height: 48px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+.box2 {
+    width: 850px;
+    height: 432px;
+    border: 1px solid gray;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 5px;
+
+    /* justify-content: space-between; */
+}
+
+.item-detail {
+    width: 100%;
+    border-bottom: 2px solid gray;
+    height: 84px;
+}
+
+.item-detail h2 {
+    margin: 35px 0 0 20px;
+    
+}
+
+.box2 form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0 0 20px ;
+}
+
+.box2 input {
+    width: 348px;
+    height: 48px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+.radio input {
+    width: 12px;
+    height: 12px;
+    margin: 0 2px 0 10px;
+}
+
+.box3 {
+    width: 850px;
+    height: 529px;
+    border: 1px solid gray;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 5px;
+
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+}
+
+.photogoods {
+    width: 100%;
+    border-bottom: 2px solid gray;
+    height: 84px;
+}
+
+.photogoods h2 {
+    margin: 35px 0 0 20px;
+    
+}
+
+.box3 .body {
+    width: 790px;
+    height: 375px;
+    border: 2px dashed lightgray;
+    margin: 5% 2% 5% 3%;
+    box-sizing: border-box;
+}
+
+
+.pict {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 284px;
+    padding: 0 3%;
+    width: 100%;
+    border-bottom: 2px solid lightgray;
+    box-sizing: border-box;
+}
+
+.pict1 {
+    height: 190px;
+    width: 190px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pict2 {
+    height: 120px;
+    width: 120px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pict-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.upload {
+    width: 160px;
+    height: 36px;
+    color: gray;
+    background: white;
+    border: 1px solid lightgrey;
+    border-radius: 30px;
+}
+
+.box4 {
+    width: 850px;
+    height: 529px;
+    border: 1px solid gray;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 5px;
+
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+}
+
+.descript {
+    width: 100%;
+    border-bottom: 2px solid gray;
+    height: 84px;
+}
+
+.descript h2 {
+    margin: 35px 0 0 20px;
+    
+}
+
+.box4 .body {
+    width: 790px;
+    height: 375px;
+    border: 1px solid lightgray;
+    margin: 5% 2% 5% 3%;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+}
+
+.writing   {
+    display: flex;
+    height: 50px;
+    border-bottom: 1px solid gray;
+}
+
+.body input {
+    width: 99.5%;
+    height: 85%;
+    border: 0px solid gray;
+}
+
+.submit {
+    width: 150px;
+    height: 48px;
+    border-radius: 30px;
+    margin-left: 40%;
+    margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+    .rightside {
+        display: none;
+    }
+}

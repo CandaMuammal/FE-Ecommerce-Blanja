@@ -1,0 +1,9 @@
+.wrapper {
+    width: 100%;
+    ;
+}
+
+.wrapper1, .wrapper2 {
+    width: 100%;
+    margin-bottom: 100px;
+}

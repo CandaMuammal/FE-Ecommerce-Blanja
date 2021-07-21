@@ -1,0 +1,270 @@
+.rightside {
+    width: 73%;
+    height: 100vh;
+    background-color:#F5F5F5;
+    
+    /* background-color: violet; */
+}
+
+.rightbox{
+    width: 850px;
+    height: 636px; 
+    margin: 50px auto auto 50px;
+    border: 1px solid gray;
+    padding: 0px 28px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal {
+    width: 100%;
+    height: 0px;
+    border: 1px solid rgb(197, 196, 196);
+    margin: 0px auto;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.leftbody {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.name, .email, .phone, .gender, .date-birth{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+select {
+    margin-right: 15px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.leftbody label {
+    width: 30%;
+    display: flex;
+    margin-right: 30px;
+    font-size: 18px;
+    justify-content: flex-end;
+}
+
+.leftbody input {
+    width: 320px;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.leftbody button {
+    width: 100px;
+    height: 40px;
+    color: white;
+    border: 0;
+    border-radius: 30px;
+    background: #DB3022;
+    box-sizing: border-box;
+    position: relative;
+    left: 190px;
+}
+
+.leftbody .gender input{
+    width: 20px;
+    height: 20px;
+}
+
+.vertical {
+    width: 0px;
+    height: 166px;
+    border: 1px solid rgb(197, 196, 196);
+}
+
+.rightbody {
+    width: 29%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.rightbody button {
+    width: 140px;
+    height: 36px;
+    border: 1px solid grey;
+    border-radius: 30px;
+    margin-top: 30px;
+    background: white;
+    color: gray;
+}
+
+@media (max-width:576px) {
+    .rightside {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        align-items: center;
+        background-color: white;
+    }
+
+    .rightbody {
+        display: none;
+        /* flex-direction: column;align-items: center; */
+
+    }
+
+    .title h5 {
+        display: none;
+    }
+
+    .title h4 {
+        padding-top: 20px;
+        text-align: center;
+        /* font-size: 30px; */
+    }
+
+    /* .rightbody img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+
+    .rightbody button {
+        height: 40px;
+        width: 150px;
+        border-radius: 30px;
+        background: #f6f6f6;
+        border: 1px solid gray;
+        margin-bottom: 30px;
+    } */
+
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rightbox{
+        width: 500px;
+        height: 636px; 
+        margin: 20px auto auto 20px;
+        border: 1px solid gray;
+        padding: 0px 28px;
+        box-sizing: border-box;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .horizontal, .vertical {
+        display: none;
+    }
+
+    .leftbody {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+
+    .leftbody label {
+        /* width: 30%; */
+        display: flex;
+        /* margin-right: 30px; */
+        font-size: 18px;
+        justify-content: flex-start;
+    }
+    
+    .leftbody input {
+        width: 320px;
+        height: 35px;
+        padding-left: 10px;
+    }
+
+
+    .name {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .email {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .phone {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .gender {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .gender #man {
+        margin-left: 15%;
+        box-sizing: border-box;
+    }
+
+    .gender #woman {
+        margin-left: 5%;
+    }
+
+    .gender input {
+        width: 12px;
+        height: 12px;
+    }
+
+    .datebirth {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 50px;
+    }
+
+    .datebirth label {
+        margin-right: 3%;
+    }
+
+    .datebirth select {
+        margin-left: 1%;
+        box-sizing: border-box;
+        width: 80px;
+    }
+
+    .save {
+        width: 200px;
+        height: 40px;
+        background: #DB3022;
+        color: white;
+        border-radius: 30px;
+        margin-right: 40%;
+    }
+
+}

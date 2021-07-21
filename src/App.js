@@ -1,25 +1,212 @@
-import logo from './logo.svg';
-import './App.css';
+// import React, {Component, Fragment} from 'react'
+// import Input from './components/base/input'
+// import Button from './components/base/button'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// class App extends Component{
+//   constructor(props){
+//     super(props)
+//     console.log('ini method costructor');
+//     this.state={
+//       name: 'risano',
+//       umur: 17,
+//       password: 'hello'
+//     }
+//   }
+//   // state = {
+//   //   name: 'risano'
+//   // }
+//   componentDidMount(){
+//     console.log('ini method compoenntDIdMount');
+//   }
+//   componentDidUpdate(){
+//     console.log('ini method componentDidUpdate');
+//   }
+//   componentWillUnmount(){
+//     console.log('ini method componentWillUnmount');
+//   }
+
+//   ubahNama(){
+//    this.setState({
+//      name: 'akbar'
+//     //  umur: 20
+//    })
+//   }
+//   handleChangeName(e){
+
+//     console.log(e);
+//     // const nameKey = 'age'
+//     // const object = {
+//     //   [nameKey]: 12
+//     // }
+//     this.setState({
+//       [e.target.name]: e.target.value
+//     })
+//   }
+//   handleClick(price){
+//     alert(price)
+//   }
+
+//   render(){
+//     console.log('ini method render');
+//     return(
+//       <>
+//         <h1>hello world menggunakan class {this.state.name} dan {this.state.umur}</h1>
+//         <button onClick={()=>this.ubahNama()}>ubah nama</button>
+
+//         <input type="text" name="name" onChange={(event)=>this.handleChangeName(event)} />
+//         <Input
+//           label="username"
+//           placeHolder="silakan isikan username"
+//           name="name"
+//           type="text"
+//           value={this.state.name}
+//           onMyChange={(e) => this.handleChangeName(e)}
+//         />
+//         <Input
+//         label="password"
+//         placeHolder="*******"
+//         name="password"
+//         type="password"
+//         value={this.state.password}
+//         // onMyChange={(e)=>this.setState({})} 
+
+//         />
+
+//         <Button title="kirim bro" onMyClick={(e)=>this.handleClick(e)}/>
+//       </>
+//     )
+//   }
+
+// }
+// export default App
+
+// import React, { useState } from 'react'
+
+// const data = [
+//   {
+//     message: 'cari makan',
+//     id: 1
+//   },
+//   {
+//     message: 'belajar react',
+//     id: 2
+//   },
+//   {
+//     message: 'tidur',
+//     id: 3
+//   }
+// ]
+
+// const Header = () => {
+//   return <h1>Aplikasi Taskku</h1>
+// }
+
+// const InfoBar = ({ taskNumber }) => {
+//   return <div>Ada {taskNumber} yang perlu dikerjakan </div>
+// }
+
+// const TaskAdder = ({setTasks, tasks}) => {
+//   const [currentValue, setCurrentValue] = useState('')
+
+//   const handleAddTask  = () => {
+//     const newTask = {
+//       id: tasks.length + 1,
+//       message: currentValue
+//     }
+//     setTasks([...tasks, newTask])
+//     setCurrentValue('')
+      
+//   }
+//   return <div>
+//     <input type="text" value={currentValue} onChange={event => setCurrentValue(event.target.value)}/>
+//     <button disabled={currentValue===''} onClick={() => handleAddTask()}>Tambah</button>
+//   </div>
+// }
+
+// const Task = ({message, id, setTasks, tasks}) => {
+
+//   const handleDelete = () => {
+//     const updatedTasks = tasks.filter(task => task.id !== id)
+//     setTasks(updatedTasks)
+//   }
+//   return <div>
+//     <div>{message}</div>
+//     <button onClick={() => handleDelete()}>Delete</button>
+//   </div>
+// }
+
+// const TaskList = ({tasks, setTasks}) => {
+//   return tasks.map(task => {
+//     return <Task message={task.message} id={task.id} setTasks={setTasks} tasks={tasks}/>
+//   })
+// }
+
+// const TaskApp = () => {
+//   const [tasks, setTasks] = useState(data)
+//   return <>
+//     <Header />
+//     <InfoBar taskNumber={tasks.length} />
+//     <TaskAdder setTasks={setTasks} tasks={tasks}/>
+//     <TaskList tasks={tasks} setTasks={setTasks}/>
+//   </> 
+// }
+
+
+// const App = () => {
+//   return <TaskApp />
+// }
+
+// export default App
+
+import React from 'react';
+import Login from './Pages/Auth/Customer/Login/index'
+import Signup from './Pages/Auth/Customer/Signup/index'
+import ResetPassword from './Pages/Auth/Customer/ResetPassword/index'
+import ConfirmPassword from './Pages/Auth/Customer/ConfirmPassword/index'
+import ConfirmReset from './Pages/Auth/Customer/ConfirmReset/index'
+import LoginSeller from './Pages/Auth/Seller/Login'
+import SignupSeller from './Pages/Auth/Seller/Signup'
+import Home from './Pages/Main/Home';
+import Product from './Pages/Main/Product';
+import Search from './Pages/Main/Search';
+// import style from './Pages/Auth/Customer/Login/'
+import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
+import Checkout from './Pages/Main/Checkout';
+import Mybag from './Pages/Main/Mybag';
+import ProfileCust1 from './Pages/Profile/ProfileCustomer/Profile1';
+import ProfileCust2 from './Pages/Profile/ProfileCustomer/Profile2';
+import ProfileCust3 from './Pages/Profile/ProfileCustomer/Profile3';
+import ProfileSeller1 from './Pages/Profile/ProfileSeller/Profile1';
+import ProfileSeller2 from './Pages/Profile/ProfileSeller/Profile2';
+import ProfileSeller3 from './Pages/Profile/ProfileSeller/Profile3';
+import ProfileSeller4 from './Pages/Profile/ProfileSeller/Profile4';
+
+const App = () => {
+  return(
+    <BrowserRouter>
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/resetpassword" component={ResetPassword} />
+        <Route path="/confirmpassword" component={ConfirmPassword} />
+        <Route path="/confirmreset" component={ConfirmReset} />
+        <Route path="/loginseller" component={LoginSeller} />
+        <Route path="/signupseller" component={SignupSeller} />
+        <Route path="/home" component={Home} />
+        <Route path="/product" component={Product} />
+        <Route path="/search" component={Search} />
+        <Route path="/checkout" component={Checkout} />
+        <Route path="/mybag" component={Mybag} />
+        <Route path="/profilecustomer1" component={ProfileCust1} />
+        <Route path="/profilecustomer2" component={ProfileCust2} />
+        <Route path="/profilecustomer3" component={ProfileCust3} />
+        <Route path="/profileseller1" component={ProfileSeller1} />
+        <Route path="/profileseller2" component={ProfileSeller2} />
+        <Route path="/profileseller3" component={ProfileSeller3} />
+        <Route path="/profileseller4" component={ProfileSeller4} />
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App

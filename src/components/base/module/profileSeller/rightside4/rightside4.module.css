@@ -1,0 +1,171 @@
+.rightside {
+    width: 73%;
+    height: 100vh;
+    background-color:#F5F5F5;
+    
+    /* background-color: violet; */
+}
+
+.rightbox{
+    width: 850px;
+    height: 636px; 
+    margin: 50px auto auto 50px;
+    border: 1px solid gray;
+    /* padding: 28px; */
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-wrap {
+    width: 600px;
+    height: 100px;
+    /* margin: 130px auto; */
+    background-color: #ffffff;
+    padding: 50px 30px 30px 50px;
+    border-radius: 5px;
+}
+
+.header {
+    font-weight: bolder;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.tab-title {
+    position: relative;
+    height: 50px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    /* background: coral; */
+}
+
+.tab-title label {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    color: black;
+    z-index: 1;
+    position: relative;
+    margin-right: 20px;
+}
+
+.radio {
+    visibility: hidden;
+}
+
+#all:checked ~ .tab-title label.all,
+#notyet:checked ~ .tab-title label.notyet,
+#packed:checked ~ .tab-title label.packed,
+#sent:checked ~ .tab-title label.sent,
+#completed:checked ~ .tab-title label.completed
+#cancel:checked ~ .tab-title label.cancel {
+    
+    color: black;
+}
+
+.slider {
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    background: white;
+    border-radius: 5px;
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    transition: all .5s ease;
+    border-bottom: 4px solid coral;
+  
+}
+
+.horizontal {
+    border-bottom: 2px solid lightgrey;
+    width: 100%;
+    margin: 0 5% 0 0;
+    
+}
+
+#notyet:checked ~ .tab-title .slider {
+    left: 15%;
+}
+
+#packed:checked ~ .tab-title .slider {
+    left: 33%;
+}
+
+#sent:checked ~ .tab-title .slider {
+    left: 48%;
+}
+
+#completed:checked ~ .tab-title .slider {
+    left: 66%;
+}
+
+#cancel:checked ~ .tab-title .slider {
+    left: 83%;
+}
+
+#home:checked ~ .section .content1 {
+    display: block;
+}
+
+#notyet:checked ~ .section .content2 {
+    display: block;
+}
+
+#packed:checked ~ .section .content3 {
+    display: block;
+}
+
+#sent:checked ~ .section .content4 {
+    display: block;
+}
+
+#completed:checked ~ .section .content5 {
+    display: block;
+}
+
+#cancel:checked ~ .section .content5 {
+    display: block;
+}
+
+
+.section .content {
+    display: none;
+}
+
+.searchitem {
+    width: 285px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    /* background-color: lightgrey; */
+    margin-bottom:150px;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+.searchitem img {
+    position: relative;
+    right: 12%;
+}
+
+.searchitem input {
+    width: 230px;
+    height: 36px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    padding-left: 10px;
+    /* background-color: lightgrey; */
+}
+
+.nothing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,8 @@
+.button-login {
+    width: 400px;
+    height: 48px;
+    background:#DB3022;
+    color: white;
+    border-radius: 30px;
+    border: 1px solid gray;
+}

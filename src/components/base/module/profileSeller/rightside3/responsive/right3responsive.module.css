@@ -1,0 +1,266 @@
+.responsive-maincontainer {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .responsive-maincontainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .responsive-rightside {
+        width: 100%;
+        height: 1900px;
+        /* background-color:#F5F5F5; */
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        /* background-color: violet; */
+    }
+    
+    
+    
+    .responsive-box1 {
+        width: 475px;
+        height: 234px;
+        border: 1px solid gray;
+        /* padding: 20px; */
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        background-color: white;
+        /* justify-content: space-between; */
+    }
+    
+    .responsive-inventory {
+        width: 100%;
+        border-bottom: 2px solid gray;
+        height: 84px;
+    }
+    
+    .responsive-inventory h2 {
+        margin: 35px 0 0 20px;
+        
+    }
+    
+    .responsive-box1 form {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0 0 20px ;
+    }
+    
+    .responsive-box1 input {
+        width: 348px;
+        height: 48px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    
+    
+    .responsive-box2 {
+        width: 475px;
+        height: 432px;
+        border: 1px solid gray;
+        /* padding: 20px; */
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: flex-start;
+        margin-bottom: 50px;
+        background-color: white;
+        border-radius: 5px;
+    
+        /* justify-content: space-between; */
+    }
+    
+    .responsive-itemdetail {
+        width: 100%;
+        border-bottom: 2px solid gray;
+        height: 84px;
+    }
+    
+    .responsive-itemdetail h2 {
+        margin: 35px 0 0 20px;
+        
+    }
+    
+    .responsive-box2 form {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0 0 20px ;
+    }
+    
+    .responsive-box2 input {
+        width: 348px;
+        height: 48px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .responsive-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+    .responsive-radio input {
+        width: 12px;
+        height: 12px;
+        margin: 0 2px 0 10px;
+    }
+    
+    .responsive-box3 {
+        width: 475px;
+        height: 529px;
+        border: 1px solid gray;
+        /* padding: 20px; */
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: flex-start;
+        margin-bottom: 50px;
+        background-color: white;
+        border-radius: 5px;
+        align-items: center;
+    
+        /* justify-content: center; */
+        /* justify-content: space-between; */
+    }
+    
+    .responsive-photogoods {
+        width: 100%;
+        border-bottom: 2px solid gray;
+        height: 84px;
+    }
+    
+    .responsive-photogoods h2 {
+        margin: 35px 0 0 20px;
+        
+    }
+    
+    .responsive-box3 .responsive-body {
+        width: 440px;
+        height: 375px;
+        border: 2px dashed lightgray;
+        /* margin: 5% 2% 5% 3%; */
+        box-sizing: border-box;
+        margin-top: 30px;
+    }
+    
+    
+    .responsive-pict {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 284px;
+        padding: 0 3%;
+        width: 100%;
+        border-bottom: 2px solid lightgray;
+        box-sizing: border-box;
+    }
+    
+    .responsive-pict1 {
+        height: 175px;
+        width: 175px;
+        background-color: lightgrey;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .responsive-pict2 {
+        height: 100px;
+        width: 100px;
+        background-color: lightgrey;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .responsive-pictbutton {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .responsive-upload {
+        width: 160px;
+        height: 36px;
+        color: gray;
+        background: white;
+        border: 1px solid lightgrey;
+        border-radius: 30px;
+    }
+    
+    .responsive-box4 {
+        width: 475px;
+        height: 529px;
+        border: 1px solid gray;
+        /* padding: 20px; */
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+    
+        /* justify-content: center; */
+        /* justify-content: space-between; */
+    }
+    
+    .responsive-descript {
+        width: 100%;
+        border-bottom: 2px solid gray;
+        height: 84px;
+    }
+    
+    .responsive-descript h2 {
+        margin: 35px 0 0 20px;
+        
+    }
+    
+    .responsive-box4 .responsive-body {
+        width: 400px;
+        height: 375px;
+        border: 1px solid lightgray;
+        /* margin: 5% 2% 5% 3%; */
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin-top: 10px;
+    
+    }
+    
+    .responsive-writing   {
+        display: flex;
+        align-items: flex-start;
+        height: 50px;
+        border-bottom: 1px solid gray;
+        flex-direction: column;
+        
+    }
+
+    .responsive-body input {
+        width: 390px;
+        height: 318px;
+    }
+    
+
+}

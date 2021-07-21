@@ -1,0 +1,332 @@
+.left-side{
+    width: 65%;
+    /* background-color: khaki; */
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.left-side h1 {
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+
+.left-side .check{
+    width: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftbox1 {
+    width: 720px;
+    height: 64px;
+    /* background-color: lavender; */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow:.5px .5px .5px .5px grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.leftbox1 a {
+    text-decoration: none;
+    color: red;
+}
+
+.leftbox1 .items{
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.items .selected{
+    color: gray;
+    padding-left: 10px;
+}
+
+
+.leftbox1 .delete{
+    width: 10%;
+}
+
+
+
+.leftbox2, .leftbox3 {
+    width: 720px;
+    height: 126px;
+    margin-bottom: 20px;
+    /* background-color: lightblue; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow:.5px .5px .5px .5px grey;
+
+
+}
+
+.leftbox2 .picture, .leftbox3 .picture{
+    width: 15%;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.leftbox2 .product, .leftbox3 .product{
+    width: 40%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.product h5, h6 {
+    margin: 0;
+}
+
+.product h6{
+    color: gray;
+}
+
+.leftbox2 .quantity, .leftbox3 .quantity{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 50px;
+    box-sizing: border-box;
+
+}
+
+.quantity button{
+    width: 36px;
+    height: 36px;
+    border: 1px solid gray;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .leftbox3 {
+    width: 720px;
+    height: 126px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow:.5px .5px .5px .5px grey;
+
+
+}
+
+.leftbox3 .picture{
+    width: 15%;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.leftbox3 .product{
+    width: 40%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+} */
+
+.leftbox3 .check {
+    width: 36px;
+}
+
+.picture img {
+    border-radius: 10px;
+}
+
+@media (max-width:576px) {
+    .left-side{
+        width: 100%;
+        /* background-color: khaki; */
+        padding-left: 0px;
+        box-sizing: border-box;
+    }
+    
+    .left-side h1 {
+        margin-bottom: 30px;
+        margin-top: 0;
+    }
+    
+    
+    .left-side .check{
+        width: 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .leftbox1 {
+        width: 100%;
+        height: 64px;
+        /* background-color: lavender; */
+        margin-bottom: 20px;
+        /* padding: 10px; */
+        border: 1px solid gray;
+        border-radius: 10px;
+        box-sizing: border-box;
+        box-shadow:.5px .5px .5px .5px grey;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+    }
+    .leftbox1 a {
+        text-decoration: none;
+        color: red;
+    }
+    
+    .leftbox1 .items{
+        width: 85%;
+        display: flex;
+        flex-direction: row;
+        padding-right: 10px;
+        box-sizing: border-box;
+    }
+    
+    .items .selected{
+        color: gray;
+        padding-left: 10px;
+    }
+    
+    
+    .leftbox1 .delete{
+        width: 10%;
+    }
+    
+    
+    
+    .leftbox2, .leftbox3 {
+        width: 100%;
+        height: 126px;
+        margin-bottom: 20px;
+        /* background-color: lightblue; */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        border: 1px solid gray;
+        border-radius: 10px;
+        box-shadow:.5px .5px .5px .5px grey;
+    
+    
+    }
+    
+    .leftbox2 .picture, .leftbox3 .picture{
+        width: 15%;
+        padding-left: 5px;
+        box-sizing: border-box;
+        margin-right: 10px;
+    }
+    
+    .leftbox2 .product, .leftbox3 .product{
+        width: 40%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    
+    .product h5, h6 {
+        margin: 0;
+    }
+    
+    .product h6{
+        color: gray;
+    }
+    
+    .leftbox2 .quantity, .leftbox3 .quantity{
+        width: 25%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding-right: 20px;
+        box-sizing: border-box;
+    
+    }
+    
+    .quantity button{
+        width: 20px;
+        height: 20px;
+        border: 1px solid gray;
+        border-radius: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .price {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 10px;
+    }
+    
+    /* .leftbox3 {
+        width: 720px;
+        height: 126px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: 1px solid gray;
+        border-radius: 10px;
+        box-shadow:.5px .5px .5px .5px grey;
+    
+    
+    }
+    
+    .leftbox3 .picture{
+        width: 15%;
+        padding-left: 5px;
+        box-sizing: border-box;
+    }
+    
+    .leftbox3 .product{
+        width: 40%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        box-sizing: border-box;
+    } */
+    
+    .leftbox3 .check {
+        width: 36px;
+    }
+    
+    .picture img {
+        border-radius: 10px;
+    }
+}
