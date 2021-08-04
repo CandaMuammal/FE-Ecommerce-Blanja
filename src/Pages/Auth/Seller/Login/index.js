@@ -21,7 +21,7 @@ const LoginSeller = () => {
             
                         <a href="./resetpassword">Forgot password?</a>
                         <button className={style["login-button"]}>Login</button>
-                        <h7>Don't have a Tokopedia account? <a href="">Register</a></h7>
+                        <h7>Don't have a Tokopedia account? <Link to="./signupseller">Register</Link></h7>
                         </div>
             
         </div>

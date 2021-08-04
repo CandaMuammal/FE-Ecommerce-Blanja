@@ -171,6 +171,9 @@ import Product from './Pages/Main/Product';
 import Search from './Pages/Main/Search';
 // import style from './Pages/Auth/Customer/Login/'
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
+import PrivateRoute from './configs/route/privateRoute';
+import SellerRoute from './configs/route/sellerRoute';
+import CustomerRoute from './configs/route/customerRoute';
 import Checkout from './Pages/Main/Checkout';
 import Mybag from './Pages/Main/Mybag';
 import ProfileCust1 from './Pages/Profile/ProfileCustomer/Profile1';
@@ -192,18 +195,18 @@ const App = () => {
         <Route path="/confirmreset" component={ConfirmReset} />
         <Route path="/loginseller" component={LoginSeller} />
         <Route path="/signupseller" component={SignupSeller} />
-        <Route path="/home" component={Home} />
-        <Route path="/product" component={Product} />
-        <Route path="/search" component={Search} />
-        <Route path="/checkout" component={Checkout} />
-        <Route path="/mybag" component={Mybag} />
-        <Route path="/profilecustomer1" component={ProfileCust1} />
-        <Route path="/profilecustomer2" component={ProfileCust2} />
-        <Route path="/profilecustomer3" component={ProfileCust3} />
-        <Route path="/profileseller1" component={ProfileSeller1} />
-        <Route path="/profileseller2" component={ProfileSeller2} />
-        <Route path="/profileseller3" component={ProfileSeller3} />
-        <Route path="/profileseller4" component={ProfileSeller4} />
+        <PrivateRoute path="/home" component={Home} />
+        <PrivateRoute path="/product/:id" component={Product} />
+        <PrivateRoute path="/search" component={Search} />
+        <PrivateRoute path="/checkout" component={Checkout} />
+        <PrivateRoute path="/mybag" component={Mybag} />
+        <CustomerRoute path="/profilecustomer1" component={ProfileCust1} />
+        <CustomerRoute path="/profilecustomer2" component={ProfileCust2} />
+        <CustomerRoute path="/profilecustomer3" component={ProfileCust3} />
+        <SellerRoute path="/profileseller1" component={ProfileSeller1} />
+        <SellerRoute path="/profileseller2" component={ProfileSeller2} />
+        <SellerRoute path="/profileseller3" component={ProfileSeller3} />
+        <SellerRoute path="/profileseller4" component={ProfileSeller4} />
       </Switch>
     </BrowserRouter>
   )

@@ -19,20 +19,42 @@ export class Rightside2 extends Component {
         })
     }
 
-    handleRemove = (product) => {
-        this.setState ({
-            product: product.data.data
-        },
-        axios.delete(`http://localhost:4000/product/${product.id}`)
+    // handleDelete = (product) => {
+    //     this.setState ({
+    //         product: product.data.data
+    //     },
+    //     axios.delete(`http://localhost:4000/product/${product.id}`)
+    //     .then(() => {
+    //         alert('success')
+    //     })
+    //     )
+       
+    // }
+
+    handleDelete = (product) =>{
+        // console.log([products.id])
+
+        axios.delete(`http://localhost:4000/v1/product/${product}`)
         .then(() => {
             alert('success')
         })
-        )
-       
+        .catch(() => {
+            alert('delete failed')
+        })
+
     }
 
+
+    // handleDelete = (id) =>{
+    //     axios.delete(`http://localhost:4000/product/${id}`)
+    //     .then(() => {
+    //         alert('success')
+    //     })
+    // }
+    
+
     componentDidMount() {
-        const url = 'http://localhost:4000/product'
+        const url = 'http://localhost:4000/v1/product/'
 
         axios.get(url)
             .then(product => {
@@ -107,7 +129,7 @@ export class Rightside2 extends Component {
 
                                         <td>{products.stock}</td>
 
-                                        <td><button >Delete</button><button>Update</button></td>
+                                        <td><button onClick={()=>this.handleDelete(products.id)}>Delete</button><button>Update</button></td>
                                     </tr>)
                                 })}
 

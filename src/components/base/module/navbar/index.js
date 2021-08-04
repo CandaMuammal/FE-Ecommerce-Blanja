@@ -13,8 +13,8 @@ import {Link} from 'react-router-dom'
 
 const Navbar = () => {
 
-  const [search, setSearch] = useState('')
   return (
+
     <div className={style.nav}>
       <div className={style["nav-wrap"]}>
         <div className={style.logo}>
@@ -22,7 +22,7 @@ const Navbar = () => {
         </div>
         <div className={style["menu-wrap"]}>
           <div className={style["searchbar"]}>
-            <input type="text" placeholder="Search" onChange={event => { setSearch(event.target.value) }} />
+            <input type="text" placeholder="Search" />
             <div className={style.searchimg}>
               <a href=""><img src={search} alt="" /></a>
             </div>

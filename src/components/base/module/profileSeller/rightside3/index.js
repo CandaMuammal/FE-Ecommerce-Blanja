@@ -5,22 +5,19 @@ import smallbox from '../../../../../Assets/smallbox.png'
 import writing from '../../../../../Assets/writing.png'
 import axios from 'axios'
 
-// export class Rightside3 extends Component {
-//     constructor(props) {
-//         super(props)
 
-//         this.state = {
-//             product: [],
-//             name: null,
-//             price: null,
-//             description: null
-//         }
-//     }
 const Rightside3 = () => {
     const [form, setForm] = useState({
         name: '',
         price: '',
-        stock: ''
+        stock: '',
+        color: '',
+        size: '',
+        idCategory: '',
+        category: '',
+        description: '',
+        image: null,
+        imagePreview: null
     })
     const handleChange = (e) => {
         setForm({
@@ -29,23 +26,51 @@ const Rightside3 = () => {
         })
     }
 
+    const handleInputFile = (e) => {
+        setForm({
+            ...form,
+            image: e.target.files[0],
+            imagePreview: URL.createObjectURL(e.target.files[0])
+        })
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:4000/product', form)
-            .then((res) => {
-                alert('success')
-            })
-            .catch(() => {
-                alert('failed')
-            })
 
-        axios.put(`http://localhost:4000/product/${form.id}`)
+        const formData = new FormData()
+        formData.append('name', form.name)
+        formData.append('price', form.price)
+        formData.append('size', form.size)
+        formData.append('color', form.color)
+        formData.append('category', form.category)
+        formData.append('idCategory', form.idCategory)
+        formData.append('description', form.description)
+        formData.append('stock', form.stock)
+        formData.append('image', form.image)
+        axios.post('http://localhost:4000/v1/product/', formData)
         .then((res) => {
-            alert('success')
-        })
-        .catch(() => {
-            alert('failed')
-        })
+                    alert('success')
+                })
+                .catch(() => {
+                    alert('failed')
+                })
+
+        // e.preventDefault()
+        // axios.post('http://localhost:4000/v1/product/', form)
+        //     .then((res) => {
+        //         alert('success')
+        //     })
+        //     .catch(() => {
+        //         alert('failed')
+        //     })
+
+        // axios.put(`http://localhost:4000/product/${form.id}`)
+        // .then((res) => {
+        //     alert('success')
+        // })
+        // .catch(() => {
+        //     alert('failed')
+        // })
     }
 
     return (
@@ -73,11 +98,14 @@ const Rightside3 = () => {
                     <input type="text" name="price" onChange={handleChange} />
                     <label for="stock">Stock</label>
                     <input type="text" name="stock" onChange={handleChange} />
-                    <label for="condition">Stock</label>
-                    <div className={style.radio}>
-                        <input type="radio" name="condition" id="" />Baru
-                        <input type="radio" name="condition" id="" />Bekas
-                    </div>
+                    <label for="color">Color</label>
+                    <input type="text" name="color" onChange={handleChange} />
+                    <label for="size">size</label>
+                    <input type="text" name="size" onChange={handleChange} />
+                    <label for="idCategory">idCategory</label>
+                    <input type="text" name="idCategory" onChange={handleChange} />
+                    <label for="category">category</label>
+                    <input type="text" name="category" onChange={handleChange} />
                     {/* </form> */}
                 </div>
                 <div className={style.box3}>
@@ -86,14 +114,16 @@ const Rightside3 = () => {
                     </div>
                     <div className={style.body}>
                         <div className={style.pict}>
-                            <div className={style.pict1}><img src={bigbox} alt="" /></div>
+                            <input type="file" onChange={handleInputFile}/>   
+                            <img src={form.imagePreview} alt="" />
+                            {/* <div className={style.pict1}><img src={bigbox} alt="" /></div>
                             <div className={style.pict2}><img src={smallbox} alt="" /></div>
                             <div className={style.pict2}><img src={smallbox} alt="" /></div>
                             <div className={style.pict2}><img src={smallbox} alt="" /></div>
-                            <div className={style.pict2}><img src={smallbox} alt="" /></div>
+                            <div className={style.pict2}><img src={smallbox} alt="" /></div> */}
                         </div>
                         <div className={style["pict-button"]}>
-                            <button className={style.upload}>Upload</button>
+                            {/* <button className={style.upload}>Upload</button> */}
                         </div>
                     </div>
                 </div>
@@ -103,7 +133,7 @@ const Rightside3 = () => {
                     </div>
                     <div className={style.body}>
                         <div className={style.writing}><img src={writing} alt="" /></div>
-                        <input type="email" />
+                        <input type="text" name="description" onChange={handleChange} />
                     </div>
                 </div>
                 <button type='submit' className={style.submit}>Add product</button>

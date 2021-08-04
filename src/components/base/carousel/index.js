@@ -11,7 +11,7 @@ import carousel8 from '../../../Assets/carousel8.png'
 import carousel9 from '../../../Assets/carousel9.png'
 import carousel10 from '../../../Assets/carousel10.png'
 import carousel11 from '../../../Assets/carousel11.png'
-import style from '../../base/carousel/carousel.module.css'
+// import style from '../../base/carousel/carousel.module.css'
 import Carousel from 'react-elastic-carousel';
 
 

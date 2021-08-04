@@ -9,7 +9,7 @@ import minus from '../../../../../Assets/minus.png'
 export class Leftside extends Component {
 
   render() {
-    return (
+    return ( 
         <div className={style["left-side"]}>
                     <h1>My bag</h1>
                     <div className={style.leftbox1}>

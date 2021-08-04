@@ -26,7 +26,7 @@ export class Leftside extends Component {
                                 <img src={edit} alt="" />
                                 <h6><a href="">Edit profile</a></h6>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                     <div className={style.myaccount}>
                         <div className={style.circle}>
