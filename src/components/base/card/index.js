@@ -13,7 +13,7 @@ const Cards = ({ image, name, price, id }) => {
             <img src={image} alt="" />
             <div className={style["card-content"]}>
                 <Link to={`./product/${id}`} ><h4>{name}</h4></Link>
-                <h6 className={style.fontprice}>{price}</h6>
+                <h6 className={style.fontprice}>Rp{price}</h6>
                 {/* <h6>Zalora's Cloth</h6> */}
                 <div className={style.star}>
                     <img src={star} alt="" />

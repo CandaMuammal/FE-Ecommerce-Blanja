@@ -84,10 +84,9 @@ const Product = ({ match}) => {
     }, [dispatch, match])
 
 
-
-
     const productName = product.map(item => {
         const name = item.name
+        console.log(item)
         return name
     })
 

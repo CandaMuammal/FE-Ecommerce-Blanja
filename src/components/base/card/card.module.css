@@ -52,8 +52,8 @@
 }
 
 .card {
-    width: 208px;
-    height: 285px;
+    width: 220px;
+    height: 375px;
     margin: 35px 15px 0 15px;
     border: 0px solid gray;
     display: flex;
@@ -76,11 +76,18 @@
 
 .card-content h4{
     margin: 10px 0px 15px 0px;
-    font-size: 12px;
+    font-size: 8px;
+}
+
+.card-content a {
+    padding-right:37%;
+    font-size: 8px;
+    text-decoration: none;
+    color: black;
 }
 
 .card h6 {
-    margin: 5px 0px 15px 0px;
+    margin: 0px 0px 15px 0px;
 
 }
 
