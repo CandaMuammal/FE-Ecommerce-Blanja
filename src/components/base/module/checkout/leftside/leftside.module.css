@@ -20,6 +20,10 @@
 
 }
 
+.leftbox1 p {
+    font-size: 16px;
+}
+
 .leftbox1 .modal-open{
     width: 210px;
     height: 36px;

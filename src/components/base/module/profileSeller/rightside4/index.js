@@ -49,36 +49,40 @@ const Rightside4 = () => {
         },
     ]
 
-    // useEffect(() => {
-    //     axios.get('http://localhost:4000/v1/history')
-    //     .then(res => {
-    //         const data = res.data.data
-
-    //         setHistory(data)
-    //         console.log(history)
-    //     })
-
-    // })
-    const getHistory = () => {
+    useEffect(() => {
         axios.get(`http://localhost:4000/v1/history`)
-            .then(res => {
-                const data = res.data
-                console.log(data)
-                setHistory(data.data)
-                console.log(history)
+        .then(res => {
+            const data = res.data
+            console.log(data)
+            setHistory(data.data)
+            console.log(history)
+            
+
+        }).catch(err => {
+            console.log(err)
+        })
+
+    })
+    // const getHistory = () => {
+    //     axios.get(`http://localhost:4000/v1/history`)
+    //         .then(res => {
+    //             const data = res.data
+    //             console.log(data)
+    //             setHistory(data.data)
+    //             console.log(history)
                 
 
-            }).catch(err => {
-                console.log(err)
-            })
-    }
+    //         }).catch(err => {
+    //             console.log(err)
+    //         })
+    // }
 
 
 
     return (
 
         <div className={style.rightside}>
-            <button onClick={getHistory}>See history</button>
+            {/* <button onClick={getHistory}>See history</button> */}
 
             <div className={style.rightbox}>
                 <Table

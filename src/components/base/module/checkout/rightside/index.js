@@ -12,6 +12,7 @@ const Rightside = (props) => {
 
     const cart = useSelector(state => state.cart)
     const { cartItem } = cart
+    const username = localStorage.getItem('username')
     
         return (
 

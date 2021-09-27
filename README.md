@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+<p align="center">
+     <img src="https://i.postimg.cc/QdVDVtTB/logo.png"   alt= border="0" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</p>
 
-## Available Scripts
 
-In the project directory, you can run:
+---
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Contents
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [About](#about)
+- [Packages](#Packages)
+- [Installation](#installation)
+- [Screenshots](#screenshots)
+- [Authors](#authors) 
 
-### `npm test`
+##  About
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="justify">
+Blanja is an ecommerce website that'll allows you (customers) to buy something sold by the sellers. The customers can add their picked items to the cart and then go to the checkout page to pay everything that's in the cart.
+The sellers will send your items to the address that the customers filled in the profile page. So with this kind of apps, will make us easier to shop online.
+</p>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##  Packages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Built With
+- ReactJs
+- Redux
+- NextJs
+- JavaScript
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Packages
+     "antd": "^4.16.13",
+    "axios": "^0.21.1",
+    "formik": "^2.2.9",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "^17.0.2",
+    "react-elastic-carousel": "^0.11.5",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-table": "^7.7.0",
+    "react-toastify": "^8.0.3",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.3.0",
+    "swiper": "^6.7.5",
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.9"
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##  Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Clone This Front End Repo
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+git clone https://github.com/CandaMuammal/FE-Ecommerce-Blanja
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Go To Folder Repo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+cd FE-Ecommerce-Blanja
+```
 
-### Code Splitting
+- Install Module
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+npm install
+```
 
-### Analyzing the Bundle Size
+- Type ` npm start` To Start Website
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br/>
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Ecommerce Blanja - Backend 
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+:rocket: [`Backend Ecommerce Blanja`](https://github.com/CandaMuammal/BackEnd-Ecommerce-Blanja)
 
-### Deployment
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Screenshots
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<p align="center">
+  <span>
+   <img src="https://i.postimg.cc/wTwSH2bN/blanja1-2.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/4yJSRH6w/blanja2-2.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/wvzWDRGH/blanja3-2.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/XJxgFH5c/Screenshot-2021-09-27-063157-2.png"   alt= border="0" /> <br/><br/><br/><br/>
+  </span>
+</p>
+
+
+## Authors
+
+:rocket: [Canda Muammal](https://github.com/CandaMuammal)

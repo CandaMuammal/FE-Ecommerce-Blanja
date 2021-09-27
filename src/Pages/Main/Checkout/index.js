@@ -19,18 +19,18 @@ const Checkout = () => {
     const history = useHistory()
 
     const cart = useSelector(state => state.cart)
-    const users = useSelector(state => state.rootReducer)
-    const userData = users.user
+    const username = localStorage.getItem('username')
+
 
     const { cartItem } = cart
 
-    console.log(userData.username)
+    // console.log(userData.username)
     console.log(cartItem[0].name)
 
     const payload = {
-        username: userData.username,
+        username,
         name: cartItem[0].name,
-        price: cartItem[0].price,
+        price: cartItem[0].price + 50000,
         qty: cartItem[0].qty,
         image: cartItem[0].image,
     }

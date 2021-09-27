@@ -78,8 +78,8 @@ const Rightside1 = () => {
 <div className={style.rightside}>
                 <div className={style.rightbox}>
                     <div className={style.title}>
-                        <h2>My Profile</h2>
-                        <h3>Manage your profile information</h3>
+                        <h3>My Profile</h3>
+                        <h4>Manage your profile information</h4>
                     </div>
                     <div className={style.horizontal}></div>
                     <div className={style.body}>
