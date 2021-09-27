@@ -4,6 +4,8 @@ import search from '../../../../../Assets/search-logo.png'
 // import nothing from '../../../../../Assets/nothing.png'
 import axios from 'axios'
 import { Table } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+
 
 
 export class Rightside2 extends Component {
@@ -30,6 +32,29 @@ export class Rightside2 extends Component {
     //     )
        
     // }
+
+    handleUpdate = (product) => {
+        axios.get(`http://localhost:4000/v1/product/${product}`)
+        .then((res) => {
+            alert('success')
+            console.log(res)
+            const dataProduct = res.data.data
+            localStorage.setItem('name', dataProduct.name)
+            localStorage.setItem('price', dataProduct.price)
+            localStorage.setItem('stock', dataProduct.stock)
+            localStorage.setItem('color', dataProduct.color)
+            localStorage.setItem('size', dataProduct.size)
+            localStorage.setItem('idCategory', dataProduct.idCategory)
+            localStorage.setItem('category', dataProduct.category)
+            localStorage.setItem('imagee', dataProduct.image)
+            localStorage.setItem('description', dataProduct.description)
+            localStorage.setItem('id', dataProduct.id)
+        })
+        .catch(() => {
+            alert('delete failed')
+        })
+
+    }
 
     handleDelete = (product) =>{
         // console.log([products.id])
@@ -129,7 +154,10 @@ export class Rightside2 extends Component {
 
                                         <td>{products.stock}</td>
 
-                                        <td><button onClick={()=>this.handleDelete(products.id)}>Delete</button><button>Update</button></td>
+                                        <td>
+                                            <button onClick={()=>this.handleDelete(products.id)}>Delete</button>
+                                           <Link to={`./profileSeller3/${products.id}`}> <button onClick={()=>this.handleUpdate(products.id)}>Update</button> </Link>
+                                        </td>
                                     </tr>)
                                 })}
 

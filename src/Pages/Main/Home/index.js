@@ -81,12 +81,14 @@ const Home = () => {
 
     const dispatch = useDispatch()
 
-    const getProduct = useSelector(state => state.getProduct)
-    const { product, loading, error } = getProduct
+    const {products, loading, error} = useSelector(state => state.product)
+    // const { product, loading, error } = getProduct
 
     useEffect(() => {
         dispatch(listProduct())
     }, [dispatch])
+
+    console.log(products)
 
     return (
         <div>
@@ -101,13 +103,13 @@ const Home = () => {
                         </div>
                     </div>
                     <div className={style.cardwrapper}>
-                        {product.data?.map(products => (
+                        {products.map(product => (
                             <Cards
-                                key={products.id}
-                                id={products.id}
-                                name={products.name}
-                                price={products.price}
-                                image={products.image}
+                                key={product.id}
+                                id={product.id}
+                                name={product.name}
+                                price={product.price}
+                                image={product.image}
                             />
                         ))}
                     </div>
@@ -118,13 +120,13 @@ const Home = () => {
                         </div>
                     </div>
                     <div className={style.cardwrapper}>
-                        {loading ? <h2>Loading...</h2> : error ? <h2>{error}</h2> : [product.data].map(products => (
+                    {products.map(product => (
                             <Cards
-                                key={[product.data].id}
-                                id={[product.data].id}
-                                name={[product.data].name}
-                                price={[product.data].price}
-                                image={[product.data].image}
+                                key={product.id}
+                                id={product.id}
+                                name={product.name}
+                                price={product.price}
+                                image={product.image}
                             />
                         ))}
                     </div>

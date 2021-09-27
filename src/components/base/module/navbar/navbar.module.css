@@ -306,6 +306,12 @@
       align-items: center;
       justify-content: flex-end;
   }
+
+  .icons .ava {
+      width: 50px;
+      height: 50px;
+  }
+
   
   .icons a {
       margin: 10px 10px;

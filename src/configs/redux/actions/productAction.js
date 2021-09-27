@@ -17,10 +17,11 @@ export const getProduct = () => async (dispatch) => {
     dispatch({type: actionTypes.GET_PRODUCT_REQUEST})
 
     const { data } =await axios.get(`http://localhost:4000/v1/product`)
+    console.log(data.data)
 
     dispatch({
       type: actionTypes.GET_PRODUCT_SUCCESS,
-      payload: data
+      payload: data.data
     })
   } catch (error) {
     dispatch({
@@ -36,6 +37,7 @@ export const getProductDetail = (id) => async (dispatch) => {
 
     const { data } =await axios.get(`http://localhost:4000/v1/product/${id}`)
 
+    // console.log(data.data)
     dispatch({
       type: actionTypes.GET_PRODUCT_DETAIL_SUCCESS,
       payload: data.data

@@ -6,13 +6,12 @@ import plus from '../../../../../Assets/plus.png'
 import minus from '../../../../../Assets/minus.png'
 
 
-export class Leftside extends Component {
-
-  render() {
+const Leftside = ({id, qty, name, price, image, description}) => {
     return ( 
-        <div className={style["left-side"]}>
-                    <h1>My bag</h1>
-                    <div className={style.leftbox1}>
+        <div className={style.leftside}>
+
+                    {/* <h1>My bag</h1> */}
+                    {/* <div className={style.leftbox1}>
                         <div className={style.check}>
                             <input type="checkbox" name="" id=""/>
                         </div>
@@ -23,32 +22,32 @@ export class Leftside extends Component {
                         <div className={style.delete}>
                             <h6><a href="../Home/home.html">Delete</a> </h6>
                         </div>
-                    </div>
+                    </div> */}
                     <div className={style.leftbox2}>
                         <div className={style.check}>
                             <input type="checkbox" name="" id=""/>
                         </div>
                         <div className={style.picture}>
-                            <img src={checkout1} alt=""/>
+                            <img src={image} alt=""/>
                         </div>
                         <div className={style.product}>
-                            <h7>Men's Formal Suit - Black</h7>
-                            <h8>Zalora Cloth</h8>
+                            <h7>{name}</h7>
+                            <h8>{description}</h8>
                         </div>
                         <div className={style.quantity}>
-                            <button className={style.minus}>
+                            {/* <button className={style.minus}>
                                 <img src={minus} alt=""/>
-                            </button>
-                            <h4>1</h4>
-                            <button className={style.plus}>
+                            </button> */}
+                            <h4> Qty: {qty}</h4>
+                            {/* <button className={style.plus}>
                                 <img src={plus} alt=""/>
-                            </button>
+                            </button> */}
                         </div>
                         <div className={style.price}>
-                            <h4>$20.00</h4>
+                            <h4>{price}</h4>
                         </div>
                     </div>
-                    <div className={style.leftbox3}>
+                    {/* <div className={style.leftbox3}>
                         <div className={style.check}>
                             <input type="checkbox" name="" id=""/>
                         </div>
@@ -71,10 +70,9 @@ export class Leftside extends Component {
                         <div className={style.price}>
                             <h4>$20.00</h4>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 )
   }
-}
 
 export default Leftside

@@ -8,10 +8,14 @@ import notif from '../../../../Assets/notif-logo.png'
 import mail from '../../../../Assets/mail-logo.png'
 import ava from '../../../../Assets/ava.png'
 import Form from 'react-bootstrap/Form';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Navbar = () => {
+
+  const isRole = localStorage.getItem('role')
+  const avatar = localStorage.getItem('image')
+
 
   return (
 
@@ -99,7 +103,10 @@ const Navbar = () => {
             <Link to="./mybag"><img src={cart} alt="" /></Link>
             <Link to=""><img src={notif} alt="" /></Link>
             <Link to=""><img src={mail} alt="" /></Link>
-            <Link to="./profileseller1"><img src={ava} alt="" /></Link>
+            {isRole === "1" ?
+              <Link to="./profileseller1"><img className={style.ava} src={avatar} alt="" /></Link>
+              : <Link to="./profilecustomer1"><img className={style.ava} src={avatar} alt="" /></Link>
+            }
           </div>
         </div>
         <div className={style["hamburger-menu"]}>

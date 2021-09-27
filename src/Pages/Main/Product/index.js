@@ -73,41 +73,42 @@ const Product = ({ match}) => {
 
     const dispatch = useDispatch()
 
-    const productDetail = useSelector(state => state.getProductDetail)
+    const {productDetails, error, loading} = useSelector(state => state.product)
 
-    const { loading, error, product } = productDetail
+    // const { loading, error, product } = productDetail
 
     useEffect(() => {
-        if (product && match.params.id !== product.id) {
             dispatch(getProductDetail(match.params.id))
-        }
+        
     }, [dispatch, match])
 
+    
 
-    const productName = product.map(item => {
-        const name = item.name
-        console.log(item)
-        return name
-    })
 
-    const productId = product.map(item => {
-        const id = item.id
-        return id
-    })
+//     const productName = product.map(item => {
+//         const name = item.name
+//         console.log(item)
+//         return name
+//     })
 
-    const productImage = product.map(item => {
-        const image = item.image
-        return image
-    })
+//     const productId = product.map(item => {
+//         const id = item.id
+//         return id
+//     })
 
-    const productDescription = product.map(item => {
-        const description = item.description
-       return description
-  })
-  const productPrice = product.map(item => {
-    const price = item.price
-   return price
-})
+//     const productImage = product.map(item => {
+//         const image = item.image
+//         return image
+//     })
+
+//     const productDescription = product.map(item => {
+//         const description = item.description
+//        return description
+//   })
+//   const productPrice = product.map(item => {
+//     const price = item.price
+//    return price
+// })
 
 
     // console.log(productName)
@@ -123,13 +124,14 @@ const Product = ({ match}) => {
                     <div className={style["main-container"]}>
 
                         <ProductBody
-                        key={productId}
-                        id={productId}
-                        name={productName}
-                        price={productPrice}
-                        image={productImage}
-                        description={productDescription}
+                        key={productDetails.id}
+                        id={productDetails.id}
+                        name={productDetails.name}
+                        price={productDetails.price}
+                        image={productDetails.image}
+                        description={productDetails.description}
                         />
+                        
 
 
 

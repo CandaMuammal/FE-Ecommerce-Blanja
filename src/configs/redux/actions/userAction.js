@@ -1,4 +1,9 @@
 import axios from "axios"
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+
+toast.configure()
 
 // export const increment = () => (dispatch, getState) => {
 //   // axios.get('')
@@ -21,14 +26,25 @@ export const login = (data, history) => async (dispatch) => {
     dispatch({ type: 'LOGIN_REQUEST', payload: dataResult })
     console.log(dataResult);
     localStorage.setItem('token', dataResult.token)
+    localStorage.setItem('username', dataResult.username)
+    localStorage.setItem('email', dataResult.email)
+    localStorage.setItem('phoneNumber', dataResult.phoneNumber)
+    localStorage.setItem('storeName', dataResult.storeName)
     localStorage.setItem('role', dataResult.role)
+    localStorage.setItem('id', dataResult.id)
+    localStorage.setItem('image', dataResult.image)
+    localStorage.setItem('address', dataResult.address)
+    localStorage.setItem('birthdate', dataResult.birthdate)
+    localStorage.setItem('address', dataResult.address)
     const token = localStorage.getItem('token')
     const role = localStorage.getItem('role')
     console.log(token);
     history.push('/home')
+    toast('login successful..')
   } catch (error) {
     // console.log(error.response);
     dispatch({ type: 'LOGIN_FAILURE', payload: error.response.data.error.message })
+    toast(error)
     history.push('/login')
     // alert(error.response.data.error.message)
     // alert('tes')S
@@ -36,17 +52,37 @@ export const login = (data, history) => async (dispatch) => {
 
 }
 
-export const register = (data, history) => (dispatch) => {
+export const registerCustomer = ({username, email, password}, history) => (dispatch) => {
   axios
-    .post('http://localhost:4000/v1/user/registerSeller', data)
+    .post('http://localhost:4000/v1/user/registerCustomer', {username, email, password})
     .then((result) => {
+      toast('successfully created an account. please login first')
+      const dataResult = result.data.data
+      dispatch({ type: "REGISTER_SUCCESS", payload: dataResult });
+      history.push('/login');
+
+    })
+    .catch((error) => {
+      toast(error)
+      dispatch({ type: 'REGISTER_FAILURE', payload: error.response.data.error.message })
+      history.push('/signupCustomer')
+
+    });
+};
+
+export const registerSeller = ({username, email, password, phoneNumber, storeName}, history) => (dispatch) => {
+  axios
+    .post('http://localhost:4000/v1/user/registerSeller', {username, email, password, phoneNumber, storeName})
+    .then((result) => {
+      toast('succesfully created an account. please login first')
       const dataResult = result.data.data
       dispatch({ type: "REGISTER_SUCCESS", payload: dataResult });
       history.push('/login');
     })
     .catch((error) => {
+      toast(error)
       dispatch({ type: 'REGISTER_FAILURE', payload: error.response.data.error.message })
-      history.push('/signupseller')
+      history.push('/signupSeller')
 
     });
 };

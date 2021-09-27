@@ -3,9 +3,8 @@ import Checkout from '../../../../../Pages/Main/Checkout'
 import style from './rightside.module.css'
 import {Link} from 'react-router-dom'
 
-export class Rightside extends Component {
+const Rightside = ({id, qty, name, price, image, description}) => {
 
-    render() {
         return (
 
             <div className={style["right-side"]}>
@@ -13,7 +12,7 @@ export class Rightside extends Component {
                     <h5>Shopping summary</h5>
                     <div className={style["total-price"]}>
                         <h5>Total price</h5>
-                        <h4>$40.00</h4>
+                        <h4>{price}</h4>
                     </div>
                     <div className={style.button}>
                         <button><Link to='./checkout'>Buy</Link></button>
@@ -24,6 +23,6 @@ export class Rightside extends Component {
 
         )
     }
-}
+
 
 export default Rightside

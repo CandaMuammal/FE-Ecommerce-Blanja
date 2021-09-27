@@ -7,18 +7,18 @@ import product from '../../../../../Assets/product.png'
 import order from '../../../../../Assets/order.png'
 // import { Form } from 'react-bootstrap'
 
-export class Leftside extends Component {
-
-    render() {
+const Leftside = () => {
+        const username = localStorage.getItem('username')
+        const avatar = localStorage.getItem('image')
         return (
 
             <div class={style.leftside}>
                 <div class={style.profile}>
                     <div class={style.ava}>
-                        <img src={ava} alt="" />
+                        <img src={avatar} alt="" />
                     </div>
                     <div class={style.profilename}>
-                        <h4>Johannes Mikael</h4>
+                        <h4>{username}</h4>
                         <div class={style.edit}>
                             <img src={edit} alt="" />
                             <h6><a href="">Edit profile</a></h6>
@@ -75,6 +75,6 @@ export class Leftside extends Component {
         )
     }
 
-}
+
 
 export default Leftside

@@ -6,13 +6,15 @@ import Rightside1 from '../../../../components/base/module/profileCustomer/right
 
 
 const ProfileCust1 = () => {
+
+    
     return (
         <>
             <Navbar />
             <div className={style.main}>
                 <div className={style["main-wrap"]}>
                     <Leftside />
-                    <Rightside1/>
+                    <Rightside1 />
                 </div>
             </div>
 

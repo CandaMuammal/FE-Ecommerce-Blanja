@@ -13,6 +13,11 @@ import plus from '../../../../Assets/plus.png'
 import minus from '../../../../Assets/minus.png'
 import star from '../../../../Assets/star1.png'
 import { useHistory } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+
+toast.configure()
 
 const ProductBody = ({id, name, image, price, description}) => {
 const [qty, setQty] = useState(1)
@@ -22,11 +27,11 @@ const history = useHistory()
 const dispatch = useDispatch()
 
 const addToCartHandle = () => {
-    dispatch(addToCart(id, history))
+    dispatch(addToCart( {id, qty, name, price, image, description}, history))
     try {
         history.push("/mybag");
     } catch {
-        alert('cannot add product')
+        toast('cannot add product')
     }
 }
     return ( 
@@ -77,17 +82,17 @@ const addToCartHandle = () => {
                         <div class={style.size}>
                             <h5>Size</h5>
                             <div class={style.plusminus}>
-                                <button class={style.minus}><img src={minus} alt="" /></button>
-                                <h5>25</h5>
-                                <button class={style.plus}><img src={plus} alt="" /></button>
+                                {/* <button class={style.minus}><img src={minus} alt="" /></button> */}
+                                <h5>1</h5>
+                                {/* <button class={style.plus}><img src={plus} alt="" /></button> */}
                             </div>
                         </div>
                         <div class={style.qty}>
                             <h5>Jumlah</h5>
                             <div class={style.plusminus}>
-                                <button class={style.minus}><img src={minus} alt="" /></button>
-                                <h5>25</h5>
-                                <button class={style.plus}><img src={plus} alt="" /></button>
+                                {/* <button class={style.minus}><img src={minus} alt="" /></button> */}
+                                <h5>1</h5>
+                                {/* <button class={style.plus}><img src={plus} alt="" /></button> */}
                             </div>
                         </div>
                     </div>

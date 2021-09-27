@@ -1,14 +1,13 @@
 // reducer user
 
-import * as actionTypes from '../constants/userConstant';
-
 const initialState = {
-  username: 'juliet',
-  email: 'juliet@gmail.com',
-  phoneNumber: 9283415,
-  role: '1',
+  username: '',
+  email: '',
+  phoneNumber: "",
+  role: '',
   profile: {},
-  error: null
+  error: null,
+  storeName: "",
 }
 const userReducer = (state = initialState, action) => {
 

@@ -9,19 +9,20 @@ import {Link} from 'react-router-dom'
 
 
 
-export class Leftside extends Component {
+const Leftside = () => {
 
-    render() {
+        const username = localStorage.getItem('username')
+        const avatar = localStorage.getItem('image')
         return (
             
 
                 <div className={style.leftside}>
                     <div className={style.profile}>
                         <div className={style.ava}>
-                            <img src={ava} alt="" />
+                            <img src={avatar} alt="" />
                         </div>
                         <div className={style.profilename}>
-                            <h4>Johannes Mikael</h4>
+                            <h4>{username}</h4>
                             <div className={style.edit}>
                                 <img src={edit} alt="" />
                                 <h6><a href="">Edit profile</a></h6>
@@ -34,12 +35,12 @@ export class Leftside extends Component {
                         </div>
                         <h6><Link to="./profilecustomer1">My Account</Link></h6>
                     </div>
-                    <div className={style["shipping-address"]}>
+                    {/* <div className={style["shipping-address"]}>
                         <div className={style.circle}>
                             <img src={shipping} alt="" />
                         </div>
                         <h6><a href="./profilecustomer2">Shipping Address</a></h6>
-                    </div>
+                    </div> */}
                     <div className={style.myorder}>
                         <div className={style.circle}>
                             <img src={myorder} alt="" />
@@ -51,6 +52,6 @@ export class Leftside extends Component {
 
         )
     }
-}
+
 
 export default Leftside

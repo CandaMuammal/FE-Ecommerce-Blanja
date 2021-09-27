@@ -26,6 +26,12 @@
     margin-bottom: 50px;
 }
 
+.ava img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
 .profile .profilename{
     display: flex;
     flex-direction: column;
@@ -49,6 +55,10 @@
     margin: 3px;
     padding-left: 10px;
     box-sizing: border-box;
+}
+
+.leftside .profilename h4 {
+    margin-left: 10px;
 }
 
 .leftside .store {

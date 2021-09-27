@@ -57,14 +57,14 @@ button a {
     color: white;
 }
 
-.form-control {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.form-control input{
+form input{
     width: 400px;
     height: 48px;
     border: 1px solid gray;

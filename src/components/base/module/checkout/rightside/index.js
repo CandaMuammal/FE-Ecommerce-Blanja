@@ -3,11 +3,16 @@ import style from './rightside.module.css'
 import gopay from '../../../../../Assets/gopay.png'
 import mastercard from '../../../../../Assets/mastercard.png'
 import pos from '../../../../../Assets/pos.png'
+import { useSelector } from 'react-redux'
 
 
-export class Rightside extends Component {
 
-    render() {
+const Rightside = (props) => {
+
+
+    const cart = useSelector(state => state.cart)
+    const { cartItem } = cart
+    
         return (
 
             <div className={style["right-side"]}>
@@ -15,16 +20,16 @@ export class Rightside extends Component {
                     <h4>Shopping summary</h4>
                     <div className={style.order} >
                         <h6>Order</h6>
-                        <h5>&nbsp;$40.00</h5>
+                        <h5>&nbsp;{cartItem[0].price}</h5>
                     </div>
                     <div className={style.delivery}>
                         <h6>Delivery</h6>
-                        <h5>$5.00</h5>
+                        <h5>50000</h5>
                     </div>
                     <hr />
                     <div className={style["shopping-summary"]}>
                         <h6>Shopping summary</h6>
-                        <h5>$45.00</h5>
+                        <h5>{cartItem[0].price + 50000}</h5>
                     </div>
                     <button className={style["payment-open"]}><a href="#payment">Select payment</a></button>
 
@@ -62,11 +67,11 @@ export class Rightside extends Component {
                                         <h6>Shopping summary </h6>
                                         <div className={style.order}>
                                             <h6>Order</h6>
-                                            <h5>&nbsp;$40.00</h5>
+                                            <h5>&nbsp;{cartItem[0].price}</h5>
                                         </div>
                                         <div className={style.delivery}>
                                             <h6>Delivery</h6>
-                                            <h5>$5.00</h5>
+                                            <h5>50000</h5>
                                         </div>
                                     </div>
 
@@ -75,11 +80,11 @@ export class Rightside extends Component {
                                 </div>
                                 <div className={style["payment-footer"]}>
                                     <div className={style["payment-summary"]}>
-                                        <h6>Shopping summary <br /><br /><span>$45.00</span></h6>
+                                        <h6>Shopping summary <br /><br /><span>{cartItem[0].price + 50000}</span></h6>
 
                                     </div>
                                     <div className={style.buy}>
-                                        <button>Buy</button>
+                                        <button onClick={props.onClick}>Buy</button>
                                     </div>
                                 </div>
 
@@ -90,7 +95,7 @@ export class Rightside extends Component {
             </div>
         )
     }
-}
+
 
 export default Rightside
 {/* <div className="modal-payment">
