@@ -83,7 +83,7 @@ const addToCartHandle = () => {
                             <h5>Size</h5>
                             <div class={style.plusminus}>
                                 {/* <button class={style.minus}><img src={minus} alt="" /></button> */}
-                                <h5>1</h5>
+                                <h5>L</h5>
                                 {/* <button class={style.plus}><img src={plus} alt="" /></button> */}
                             </div>
                         </div>

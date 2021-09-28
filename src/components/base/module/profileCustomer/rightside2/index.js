@@ -1,79 +1,123 @@
 import React, { Component } from 'react'
-import style from './rightside2.module.css'
-import avabig from '../../../../../Assets/avabig.png'
+import { useState, useEffect } from 'react'
+import style from '../../profileSeller/rightside4/rightside4.module.css'
+import nothing from '../../../../../Assets/nothing.png'
+import search from '../../../../../Assets/search-logo.png'
+import { Table } from 'antd'
+import "antd/dist/antd.css"
+import axios from 'axios'
+
+const Rightside2 = () => {
+
+    const [history, setHistory] = useState()
+    const [page, setPage] = useState(1)
+    const [pageSize, setPageSize] = useState(2)
+
+    const columns = [
+        {
+            key: '1',
+            title: 'Order Id',
+            dataIndex: 'id',
+            sorter:(record1, record2) => {
+                return record1.id > record2.id
+            }
+
+        },
+        {
+            key: '2',
+            title: 'Ordered by',
+            dataIndex: 'username'
+
+        },
+        {
+            key: '3',
+            title: 'Item',
+            dataIndex: 'name'
+
+        },
+        {
+            key: '4',
+            title: 'Price',
+            dataIndex: 'price'
+
+        },
+        {
+            key: '5',
+            title: 'Qty',
+            dataIndex: 'qty'
+
+        },
+    ]
+
+    useEffect(() => {
+        axios.get(`http://localhost:4000/v1/history`)
+        .then(res => {
+            const data = res.data
+            console.log(data)
+            setHistory(data.data)
+            console.log(history)
+            
+
+        }).catch(err => {
+            console.log(err)
+        })
+
+    })
+   
+    return (
+
+        <div className={style.rightside}>
+            {/* <button onClick={getHistory}>See history</button> */}
+
+            <div className={style.rightbox}>
+                <Table
+                    dataSource={history}
+                    columns={columns}
+                    pagination={{
+                        current: page,
+                        pageSize: pageSize,
+                        onChange:(page, pageSize) => {
+                            setPage(page);
+                            setPageSize(pageSize)
+                        }
+                    }}
+                >
 
 
+                </Table>
 
-export class Rightside2 extends Component {
-
-    render() {
-        return (
-
-            <div class={style.rightside}>
-                <div class={style.rightbox}>
-                    <div class={style.title}>
-                        <h4> My Profile</h4>
-                        <h5>Manage your profile information</h5>
-                    </div>
-                    <div class={style.horizontal}></div>
-                    <div class={style.body}>
-                        <div class={style.add}>
-                            <h3><a href="#modal2" class={style["modal2-open"]}>Add new address</a></h3>
+                {/* <div className={style["tab-wrap"]}>
+                        <div className={style.header}>
+                            History
                         </div>
-                        <div class={style["current-address"]}>
-                            <h4>Andreas Jane</h4>
-                            <p>Perumahan Sapphire Mediterania, Wiradadi, Kec. Sokaraja, Kabupaten Banyumas,
-                                Jawa Tengah, 53181 [Tokopedia Note: blok c 16] Sokaraja, Kab. Banyumas,
-                                53181</p>
-                            <h4><a href="">Change address</a></h4>
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.all} checked />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.notyet} />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.packed} />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.sent} />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.completed} />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.cancel} />
+
+                        <div className={style["tab-title"]}>
+                            <label for="all" className={style.all}>All items</label>
+                            <label for="notyet" className={style.notyet}>Unpaid</label>
+                            <label for="packed" className={style.packed}>Packed</label>
+                            <label for="sent" className={style.sent}>Sent</label>
+                            <label for="completed" className={style.about}>Completed</label>
+                            <label for="cancel" className={style.cancel}>Cancel</label>
+                            <div className={style.slider}></div>
                         </div>
-                        <div class={style.modal2} id="modal2">
-                            <div class={style["modal2-content"]}>
-                                <div class={style["modal2-heading"]}>
-                                    <a href="#" class={style["modal2-close"]}>&times;</a>
-                                </div>
-                                <div class={style["modal2-body"]}>
-                                    <div class={style["body-title"]}>
-                                        <h4>Add new address</h4>
-                                    </div>
-                                    <div class={style["body-content"]}>
-                                        <div class={style.content1}>
-                                            <h5>Save address as (ex. home address, office address)</h5>
-                                            <input type="text" placeholder="Home, Office" />
-                                        </div>
-                                        <div class={style["mid-content"]}>
-                                            <div class={style.content2}>
-                                                <h5>Recipient' name</h5>
-                                                <input type="text" placeholder="Name" />
-                                                <h5>Address</h5>
-                                                <input type="text" placeholder="Address" />
-                                                <h5>District or subdistrict</h5>
-                                                <input type="text" placeholder="District" />
-                                                <div class={style.check}>
-                                                    <input type="checkbox" name="" id="" />
-                                                    <h5>Make it primary address</h5>
-                                                </div>
-                                            </div>
-                                            <div class={style.content3}>
-                                                <h5>Recipient's phone number</h5>
-                                                <input type="text" placeholder="Phone" />
-                                                <h5>Postal code</h5>
-                                                <input type="text" placeholder="Postal code" />
-                                                <div class={style["save-button"]}>
-                                                    <button class={style.cancel}><a href="">Cancel</a></button>
-                                                    <button class={style.save}><a href="">Save</a></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        <div className={style.horizontal}></div>
+
+                    </div> */}
+                {/* <div className={style.searchitem}>
+                        <input type="text" placeholder="Search" />
+                        <img src={search} alt="" />
+                    </div> */}
+                {/* <div className={style.nothing}><img src={nothing} alt="" /></div> */}
             </div>
-        )
-    }
+
+        </div>
+    )
 }
 
 export default Rightside2

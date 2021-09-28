@@ -1,52 +1,124 @@
 import React, { Component } from 'react'
-import style from './rightside3.module.css'
-import avabig from '../../../../../Assets/avabig.png'
+import { useState, useEffect } from 'react'
+import style from '../../profileSeller/rightside4/rightside4.module.css'
+import nothing from '../../../../../Assets/nothing.png'
+import search from '../../../../../Assets/search-logo.png'
+import { Table } from 'antd'
+import "antd/dist/antd.css"
+import axios from 'axios'
+
+const Rightside3 = () => {
+
+    const [history, setHistory] = useState()
+    const [page, setPage] = useState(1)
+    const [pageSize, setPageSize] = useState(2)
+    const username = localStorage.getItem('username')
+
+    const columns = [
+        {
+            key: '1',
+            title: 'Order Id',
+            dataIndex: 'id',
+            sorter:(record1, record2) => {
+                return record1.id > record2.id
+            }
+
+        },
+        {
+            key: '2',
+            title: 'Ordered by',
+            dataIndex: 'username'
+
+        },
+        {
+            key: '3',
+            title: 'Item',
+            dataIndex: 'name'
+
+        },
+        {
+            key: '4',
+            title: 'Price',
+            dataIndex: 'price'
+
+        },
+        {
+            key: '5',
+            title: 'Qty',
+            dataIndex: 'qty'
+
+        },
+    ]
+
+    useEffect(() => {
+        axios.get(`http://localhost:4000/v1/history/${username}`)
+        .then(res => {
+            const data = res.data
+            console.log(data)
+            setHistory(data.data)
+            console.log(history)
+            
+
+        }).catch(err => {
+            console.log(err)
+        })
+
+    })
+   
+    return (
+
+        <div className={style.rightside}>
+            {/* <button onClick={getHistory}>See history</button> */}
+
+            <div className={style.rightbox}>
+                <Table
+                    dataSource={history}
+                    columns={columns}
+                    pagination={{
+                        current: page,
+                        pageSize: pageSize,
+                        onChange:(page, pageSize) => {
+                            setPage(page);
+                            setPageSize(pageSize)
+                        }
+                    }}
+                >
 
 
+                </Table>
 
-export class Rightside3 extends Component {
-
-    render() {
-        return (
-
-            <div className={style.rightside}>
-                <div className={style.rightbox}>
-                    <div className={style["tab-wrap"]}>
+                {/* <div className={style["tab-wrap"]}>
                         <div className={style.header}>
-                            My order
+                            History
                         </div>
-                        <input type="radio" name="slider" className={`${style.radio} ${style.all}`} id="all" checked />
-                        <input type="radio" name="slider" className={`${style.radio} ${style.notyet}`} id="notyet" />
-                        <input type="radio" name="slider" className={`${style.radio} ${style.packed}`} id="packed" />
-                        <input type="radio" name="slider" className={`${style.radio} ${style.sent}`} id="sent" />
-                        <input type="radio" name="slider" className={`${style.radio} ${style.completed}`} id="completed" />
-                        <input type="radio" name="slider" className={`${style.radio} ${style.cancel}`} id="cancel" />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.all} checked />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.notyet} />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.packed} />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.sent} />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.completed} />
+                        <input type="radio" name="slider" classNameName={style.radio} id={style.cancel} />
 
                         <div className={style["tab-title"]}>
-                            <label for="all2" className={style.all2}>All items</label>
-                            <label for="notyet2" className={style.notyet2}>Unpaid</label>
-                            <label for="packed2" className={style.packed2}>Packed</label>
-                            <label for="sent2" className={style.sent2}>Sent</label>
-                            <label for="completed2" className={style.completed2}>Completed</label>
-                            <label for="cancel2" className={style.cancel2}>Cancel</label>
+                            <label for="all" className={style.all}>All items</label>
+                            <label for="notyet" className={style.notyet}>Unpaid</label>
+                            <label for="packed" className={style.packed}>Packed</label>
+                            <label for="sent" className={style.sent}>Sent</label>
+                            <label for="completed" className={style.about}>Completed</label>
+                            <label for="cancel" className={style.cancel}>Cancel</label>
                             <div className={style.slider}></div>
                         </div>
                         <div className={style.horizontal}></div>
 
-                        <div className={style.section}>
-                            <div className={style.content1}>
-                                <div className={style.title}></div>
-                            </div>
-                            <div className={style.content2}>
-                                <div className={style.title}></div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                    </div> */}
+                {/* <div className={style.searchitem}>
+                        <input type="text" placeholder="Search" />
+                        <img src={search} alt="" />
+                    </div> */}
+                {/* <div className={style.nothing}><img src={nothing} alt="" /></div> */}
             </div>
 
-        )
+        </div>
+    )
 }
-}
+
 export default Rightside3
