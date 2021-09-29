@@ -17,7 +17,7 @@ export default class Search extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/product/')
+        axios.get(`${process.env.REACT_APP_API_URL}v1/product/`)
             .then(res => {
                 const product = res.data.data
                 this.setState({ product })
