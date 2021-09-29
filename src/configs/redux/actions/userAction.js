@@ -25,6 +25,8 @@ export const login = (data, history) => async (dispatch) => {
     const dataResult = result.data.data
     dispatch({ type: 'LOGIN_REQUEST', payload: dataResult })
     console.log(dataResult);
+
+    
     localStorage.setItem('token', dataResult.token)
     localStorage.setItem('username', dataResult.username)
     localStorage.setItem('email', dataResult.email)
