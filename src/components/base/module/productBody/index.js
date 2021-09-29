@@ -42,15 +42,7 @@ const addToCartHandle = () => {
                     <div class={style.box1}>
                         <img src={image} alt="" />
                     </div>
-                    <div class={style.box2}>
-                        <img src={image} alt="" />
-                    </div>
-                    <div class={style.box3}>
-                        <img src={image} alt="" />
-                    </div>
-                    <div class={style.box4}>
-                        <img src={image} alt="" />
-                    </div>
+                    
                 </div>
                 <div class={style.right}>
                     <div class={style.name}>
@@ -103,13 +95,14 @@ const addToCartHandle = () => {
                     </div>
                 </div>
             </div>
+            <hr />
             <div class={style.container2}>
+                <div className={style.info}>
                 <h2>Informasi produk</h2>
                 <h5>Condition <br /><br /> <span>New</span></h5>
                 <h5>{description}</h5>
-            </div>
-
-            <div class={style.container3}>
+                </div>
+                <div class={style.container3}>
                 <h2>Produk Review</h2>
                 <div class={style.review}>
                     <div class={style.total}>
@@ -156,6 +149,9 @@ const addToCartHandle = () => {
                     </div>
                 </div>
             </div>
+            </div>
+
+            
         </div>
 
     )

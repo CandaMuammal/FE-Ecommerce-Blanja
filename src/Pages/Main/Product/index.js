@@ -115,7 +115,7 @@ const Product = ({ match}) => {
     // console.log(productImage)
     // console.log(productId)
     // console.log(productDescription)
-
+ 
     return (
         <>
             <Navbar />

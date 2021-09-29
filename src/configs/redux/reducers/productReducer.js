@@ -14,7 +14,7 @@ const initialState = {
     error: null
 }
 
-const ProductReducer = (state = initialState, action) => {
+export const ProductReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.GET_PRODUCT_REQUEST:
             return {
@@ -33,11 +33,11 @@ const ProductReducer = (state = initialState, action) => {
                 error: action.payload
             }
 
-        // case actionTypes.GET_PRODUCT_DETAIL_REQUEST:
-        //     return {
-        //         loading: true,
-        //         productDetails: []
-        //     }
+        case actionTypes.GET_PRODUCT_DETAIL_REQUEST:
+            return {
+                loading: true,
+                productDetails: []
+            }
         case actionTypes.GET_PRODUCT_DETAIL_SUCCESS:
             return {
                 loading: false,
@@ -49,30 +49,31 @@ const ProductReducer = (state = initialState, action) => {
     }
 }
 
-export default ProductReducer
+export const getProductDetailReducer = (state = { product: [] }, action) => {
+    switch (action.type) {
+        case actionTypes.GET_PRODUCT_DETAIL_REQUEST:
+            return {
+                loading: true,
+                product: []
+            }
+        case actionTypes.GET_PRODUCT_DETAIL_SUCCESS:
+            return {
+                loading: false,
+                product: action.payload
+            }
+        case actionTypes.GET_PRODUCT_DETAIL_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+        case actionTypes.GET_PRODUCT_DETAIL_RESET:
+            return {
+                product: {}
+            }
+        default:
+            return state;
+    }
+}
 
-// export const getProductDetailReducer = (state = { product: [] }, action) => {
-//     switch (action.type) {
-//         case actionTypes.GET_PRODUCT_DETAIL_REQUEST:
-//             return {
-//                 loading: true,
-//                 product: []
-//             }
-//         case actionTypes.GET_PRODUCT_DETAIL_SUCCESS:
-//             return {
-//                 loading: false,
-//                 product: action.payload
-//             }
-//         case actionTypes.GET_PRODUCT_DETAIL_FAIL:
-//             return {
-//                 loading: false,
-//                 error: action.payload
-//             }
-//         case actionTypes.GET_PRODUCT_DETAIL_RESET:
-//             return {
-//                 product: {}
-//             }
-//         default:
-//             return state;
-//     }
-// }
+
+

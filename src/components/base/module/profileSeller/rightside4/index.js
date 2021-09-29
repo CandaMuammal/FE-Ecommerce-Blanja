@@ -63,22 +63,7 @@ const Rightside4 = () => {
         })
 
     })
-    // const getHistory = () => {
-    //     axios.get(`http://localhost:4000/v1/history`)
-    //         .then(res => {
-    //             const data = res.data
-    //             console.log(data)
-    //             setHistory(data.data)
-    //             console.log(history)
-                
-
-    //         }).catch(err => {
-    //             console.log(err)
-    //         })
-    // }
-
-
-
+   
     return (
 
         <div className={style.rightside}>

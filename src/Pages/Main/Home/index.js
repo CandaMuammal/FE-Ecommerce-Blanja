@@ -103,6 +103,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className={style.cardwrapper}>
+                    {loading && <h1>Loadingg... bro....</h1>}
                         {products.map(product => (
                             <Cards
                                 key={product.id}

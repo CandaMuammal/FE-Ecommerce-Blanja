@@ -14,7 +14,7 @@ import * as actionTypes from '../constants/productConstant'
 
 export const getProduct = () => async (dispatch) => {
   try {
-    dispatch({type: actionTypes.GET_PRODUCT_REQUEST})
+    // dispatch({type: actionTypes.GET_PRODUCT_REQUEST})
 
     const { data } =await axios.get(`http://localhost:4000/v1/product`)
     console.log(data.data)
@@ -33,7 +33,7 @@ export const getProduct = () => async (dispatch) => {
 
 export const getProductDetail = (id) => async (dispatch) => {
   try {
-    dispatch({type: actionTypes.GET_PRODUCT_DETAIL_REQUEST})
+    // dispatch({type: actionTypes.GET_PRODUCT_DETAIL_REQUEST})
 
     const { data } =await axios.get(`http://localhost:4000/v1/product/${id}`)
 
