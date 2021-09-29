@@ -37,7 +37,7 @@ const Checkout = () => {
 
     const handlePayment = () => {
 
-        axios.post(`http://localhost:4000/v1/history/`, payload)
+        axios.post(`${process.env.REACT_APP_API_URL}v1/history/`, payload)
         
         .then((res) => {
             toast('success')

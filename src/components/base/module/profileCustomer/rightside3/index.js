@@ -51,7 +51,7 @@ const Rightside3 = () => {
     ]
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/v1/history/${username}`)
+        axios.get(`${process.env.REACT_APP_API_URL}v1/history/${username}`)
         .then(res => {
             const data = res.data
             console.log(data)

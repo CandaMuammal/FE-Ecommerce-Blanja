@@ -25,7 +25,7 @@ export class Rightside2 extends Component {
     //     this.setState ({
     //         product: product.data.data
     //     },
-    //     axios.delete(`http://localhost:4000/product/${product.id}`)
+    //     axios.delete(`${process.env.REACT_APP_API_URL}product/${product.id}`)
     //     .then(() => {
     //         alert('success')
     //     })
@@ -34,7 +34,7 @@ export class Rightside2 extends Component {
     // }
 
     handleUpdate = (product) => {
-        axios.get(`http://localhost:4000/v1/product/${product}`)
+        axios.get(`${process.env.REACT_APP_API_URL}v1/product/${product}`)
         .then((res) => {
             alert('success')
             console.log(res)
@@ -59,7 +59,7 @@ export class Rightside2 extends Component {
     handleDelete = (product) =>{
         // console.log([products.id])
 
-        axios.delete(`http://localhost:4000/v1/product/${product}`)
+        axios.delete(`${process.env.REACT_APP_API_URL}v1/product/${product}`)
         .then(() => {
             alert('success')
         })
@@ -71,7 +71,7 @@ export class Rightside2 extends Component {
 
 
     // handleDelete = (id) =>{
-    //     axios.delete(`http://localhost:4000/product/${id}`)
+    //     axios.delete(`${process.env.REACT_APP_API_URL}product/${id}`)
     //     .then(() => {
     //         alert('success')
     //     })
@@ -79,7 +79,7 @@ export class Rightside2 extends Component {
     
 
     componentDidMount() {
-        const url = 'http://localhost:4000/v1/product/'
+        const url = '${process.env.REACT_APP_API_URL}v1/product/'
 
         axios.get(url)
             .then(product => {

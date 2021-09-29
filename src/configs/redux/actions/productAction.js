@@ -16,7 +16,7 @@ export const getProduct = () => async (dispatch) => {
   try {
     // dispatch({type: actionTypes.GET_PRODUCT_REQUEST})
 
-    const { data } =await axios.get(`http://localhost:4000/v1/product`)
+    const { data } =await axios.get(`${process.env.REACT_APP_API_URL}v1/product`)
     console.log(data.data)
 
     dispatch({
@@ -35,7 +35,7 @@ export const getProductDetail = (id) => async (dispatch) => {
   try {
     // dispatch({type: actionTypes.GET_PRODUCT_DETAIL_REQUEST})
 
-    const { data } =await axios.get(`http://localhost:4000/v1/product/${id}`)
+    const { data } =await axios.get(`${process.env.REACT_APP_API_URL}v1/product/${id}`)
 
     // console.log(data.data)
     dispatch({

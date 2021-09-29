@@ -21,7 +21,7 @@ toast.configure()
 export const login = (data, history) => async (dispatch) => {
   try {
     const dataBody = { email: data.email, password: data.password }
-    const result = await axios.post('http://localhost:4000/v1/user/login', dataBody)
+    const result = await axios.post(`${process.env.REACT_APP_API_URL}v1/user/login`, dataBody)
     const dataResult = result.data.data
     dispatch({ type: 'LOGIN_REQUEST', payload: dataResult })
     console.log(dataResult);
@@ -54,7 +54,7 @@ export const login = (data, history) => async (dispatch) => {
 
 export const registerCustomer = ({username, email, password}, history) => (dispatch) => {
   axios
-    .post('http://localhost:4000/v1/user/registerCustomer', {username, email, password})
+    .post(`${process.env.REACT_APP_API_URL}v1/user/registerCustomer`, {username, email, password})
     .then((result) => {
       toast('successfully created an account. please login first')
       const dataResult = result.data.data
@@ -72,7 +72,7 @@ export const registerCustomer = ({username, email, password}, history) => (dispa
 
 export const registerSeller = ({username, email, password, phoneNumber, storeName}, history) => (dispatch) => {
   axios
-    .post('http://localhost:4000/v1/user/registerSeller', {username, email, password, phoneNumber, storeName})
+    .post(`${process.env.REACT_APP_API_URL}v1/user/registerSeller`, {username, email, password, phoneNumber, storeName})
     .then((result) => {
       toast('succesfully created an account. please login first')
       const dataResult = result.data.data

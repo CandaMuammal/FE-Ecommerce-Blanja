@@ -49,7 +49,7 @@ const Rightside3 = () => {
         formData.append('description', form.description)
         formData.append('stock', form.stock)
         formData.append('image', form.image)
-        axios.post('http://localhost:4000/v1/product/', formData)
+        axios.post('${process.env.REACT_APP_API_URL}v1/product/', formData)
             .then((res) => {
                 alert('success')
             })
@@ -72,7 +72,7 @@ const Rightside3 = () => {
         formData.append('stock', form.stock)
         formData.append('image', form.image)
 
-        axios.put(`http://localhost:4000/v1/product/${localStorage.getItem('id')}`, formData)
+        axios.put(`${process.env.REACT_APP_API_URL}v1/product/${localStorage.getItem('id')}`, formData)
             .then((res) => {
                 alert('success')
             })
@@ -154,7 +154,7 @@ const Rightside3 = () => {
 }
 
 // componentDidMount() {
-//     const url = 'http://localhost:4000/product'
+//     const url = '${process.env.REACT_APP_API_URL}product'
 //     const dataProduct = {
 //                 name: this.state.name,
 //                 price: this.state.price,
@@ -180,7 +180,7 @@ const Rightside3 = () => {
 
 // saveToAPI(e) {
 //     e.preventDefault()
-//     const urlAPI = 'http://localhost:4000/product'
+//     const urlAPI = '${process.env.REACT_APP_API_URL}product'
 //     const dataProduct = {
 //         name: this.state.name,
 //         price: this.state.price,
