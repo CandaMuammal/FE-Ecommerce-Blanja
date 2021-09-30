@@ -38,7 +38,7 @@ const Leftside = ({id, qty, name, price, image, description}) => {
                             {/* <button className={style.minus}>
                                 <img src={minus} alt=""/>
                             </button> */}
-                            <h4> Qty: <input type="text" /></h4>
+                            <h4> Qty: 1</h4>
                             {/* <button className={style.plus}>
                                 <img src={plus} alt=""/>
                             </button> */}
