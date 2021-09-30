@@ -79,7 +79,7 @@ export class Rightside2 extends Component {
     
 
     componentDidMount() {
-        const url = '${process.env.REACT_APP_API_URL}v1/product/'
+        const url = `${process.env.REACT_APP_API_URL}v1/product/`
 
         axios.get(url)
             .then(product => {
