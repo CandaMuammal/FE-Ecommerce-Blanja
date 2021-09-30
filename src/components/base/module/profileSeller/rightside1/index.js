@@ -55,12 +55,12 @@ const Rightside1 = () => {
 
             .then((res) => {
                 toast('success updated profile!')
-                localStorage.setItem('username', form.username)
-                localStorage.setItem('email', form.email)
-                localStorage.setItem('phoneNumber', form.phoneNumber)
-                localStorage.setItem('storeName', form.storeName)
-                localStorage.setItem('image', form.image)
-                console.log(form.username)
+                localStorage.setItem('username', username)
+                localStorage.setItem('email', email)
+                localStorage.setItem('phoneNumber', phoneNumber)
+                localStorage.setItem('storeName', storeName)
+                localStorage.setItem('image', image)
+                // console.log(form.username)
 
             })
             .catch((err) => {
