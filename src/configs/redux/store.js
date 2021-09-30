@@ -19,14 +19,14 @@ import {createStore, applyMiddleware, combineReducers} from 'redux'
 import rootReducer from './reducers/rootReducer'
 // import logger from 'redux-logger'
 import thunk from 'redux-thunk'
-import {ProductReducer, getProductDetailReducer} from './reducers/productReducer'
+import {ProductReducer} from './reducers/productReducer'
 // import {rootReducer} from './reducers/userReducer'
 import { cartReducer } from './reducers/cartReducers'
 import {composeWithDevTools} from 'redux-devtools-extension'
 
 const reducer = combineReducers({
     cart: cartReducer,
-    productDetail: getProductDetailReducer,
+    // productDetail: getProductDetailReducer,
     product: ProductReducer,
     rootReducer
 })

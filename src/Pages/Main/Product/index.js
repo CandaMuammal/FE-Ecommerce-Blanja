@@ -78,7 +78,7 @@ const Product = ({ match}) => {
     // const { loading, error, product } = productDetail
 
     useEffect(() => {
-            dispatch(getProductDetail(match.params.id))
+        dispatch(getProductDetail(match.params.id))
         
     }, [dispatch, match])
 
@@ -122,7 +122,6 @@ const Product = ({ match}) => {
             <div className={style.main}>
                 <div className={style["main-wrap"]}>
                     <div className={style["main-container"]}>
-
                         <ProductBody
                         key={productDetails.id}
                         id={productDetails.id}
@@ -131,14 +130,9 @@ const Product = ({ match}) => {
                         image={productDetails.image}
                         description={productDetails.description}
                         />
-                        
-
-
-
-
                     </div>
                 </div>
-            </div>
+            </div> 
         </>
     )
 }
