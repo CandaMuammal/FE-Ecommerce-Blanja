@@ -22,7 +22,7 @@ const Rightside1 = () => {
         phoneNumber: localStorage.getItem('phoneNumber'),
         image: localStorage.getItem('image'),
         storeName: localStorage.getItem('storeName'),
-        // imagePreview: null
+        imagePreview: null
 
     })
     const handleChange = (e) => {
@@ -35,7 +35,7 @@ const Rightside1 = () => {
         setForm({
             ...form,
             image: e.target.files[0],
-            // imagePreview: URL.createObjectURL(e.target.files[0])
+            imagePreview: URL.createObjectURL(e.target.files[0])
         })
         console.log(e.target.files)
     }
@@ -59,11 +59,12 @@ const Rightside1 = () => {
                 localStorage.setItem('email', form.email)
                 localStorage.setItem('phoneNumber', form.phoneNumber)
                 localStorage.setItem('storeName', form.storeName)
+                localStorage.setItem('image', form.image)
                 console.log(form.username)
 
             })
             .catch((err) => {
-                alert(err.message)
+                toast(err.message)
 
             })
     }
