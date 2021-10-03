@@ -51,7 +51,7 @@ const Rightside1 = () => {
 
 
         // formData.append('image', form.image)
-        axios.put(`${process.env.REACT_APP_API_URL}user/customer/${idUser}`, formData)
+        axios.put(`${process.env.REACT_APP_API_URL}user/${idUser}`, formData)
             // axios.put('http://localhost:4000/v1/user/60236000', formData)
 
             .then((res) => {
