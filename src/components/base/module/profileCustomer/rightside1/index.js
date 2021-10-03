@@ -21,7 +21,6 @@ const Rightside1 = () => {
         image: localStorage.getItem('image'),
         address: localStorage.getItem('address'),
         birthdate: localStorage.getItem('birthdate'),
-        address: localStorage.getItem('address'),
         // imagePreview: null
 
     })
@@ -51,17 +50,17 @@ const Rightside1 = () => {
 
 
         // formData.append('image', form.image)
-        axios.put(`${process.env.REACT_APP_API_URL}user/${idUser}`, formData)
+        axios.put(`${process.env.REACT_APP_API_URL}v1/user/customer/${idUser}`, formData)
             // axios.put('http://localhost:4000/v1/user/60236000', formData)
 
             .then((res) => {
                 toast('success updated profile!')
-                localStorage.setItem('username', form.username)
-                localStorage.setItem('email', form.email)
-                localStorage.setItem('phoneNumber', form.phoneNumber)
-                localStorage.setItem('birthdate', form.birthdate)
-                localStorage.setItem('address', form.address)
-                localStorage.setItem('image', form.image)
+                localStorage.setItem('username', username)
+                localStorage.setItem('email', email)
+                localStorage.setItem('phoneNumber', phoneNumber)
+                localStorage.setItem('birthdate', birthdate)
+                localStorage.setItem('address', address)
+                localStorage.setItem('image', image)
                 console.log(form.username)
 
             })

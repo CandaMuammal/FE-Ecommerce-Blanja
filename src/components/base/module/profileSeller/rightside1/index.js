@@ -43,7 +43,7 @@ const Rightside1 = () => {
         e.preventDefault()
         const formData = new FormData()
         formData.append('username', form.username)
-        formData.append('email', form.email)
+        formData.append('email', form.email) 
         formData.append('phoneNumber', form.phoneNumber)
         formData.append('storeName', form.storeName)
         formData.append('image', form.image)
