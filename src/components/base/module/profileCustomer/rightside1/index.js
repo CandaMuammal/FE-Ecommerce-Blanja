@@ -21,7 +21,7 @@ const Rightside1 = () => {
         image: localStorage.getItem('image'),
         address: localStorage.getItem('address'),
         birthdate: localStorage.getItem('birthdate'),
-        // imagePreview: null
+        imagePreview: null
 
     })
     const handleChange = (e) => {
@@ -34,7 +34,7 @@ const Rightside1 = () => {
         setForm({
             ...form,
             image: e.target.files[0],
-            // imagePreview: URL.createObjectURL(e.target.files[0])
+            imagePreview: URL.createObjectURL(e.target.files[0])
         })
         console.log(e.target.files)
     }
@@ -87,7 +87,7 @@ const Rightside1 = () => {
                 <div className={style.horizontal}></div>
                 <div className={style.body}>
                     <div className={style.leftbody}>
-                        <form action="">
+                        {/* <form action=""> */}
                             <div className={style.name}>
                                 <label for="name">Name</label>
                                 <input type="text" name="username" value={form.username} onChange={handleChange} placeholder="Johannes Mikael" />
@@ -110,7 +110,7 @@ const Rightside1 = () => {
                                 <label for="address">Address</label>
                                 <textarea name="address" value={form.address} onChange={handleChange} placeholder="DD/MM/YYYY" id="phone" />
                             </div>
-                        </form>
+                        {/* </form> */}
                         <button className={style.save} onClick={handleSubmit}>Save</button>
                         <button className={style.save} onClick={handleLogout}>Logout</button>
                     </div>
