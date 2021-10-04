@@ -112,7 +112,7 @@ const Rightside1 = () => {
                     <div className={style.rightbody}>
                         <input type="file" onChange={handleInputFile} />
                         <img src={form.image} alt="" />
-                        <button>Select Image</button>
+                        {/* <button>Select Image</button> */}
                     </div>
                 </div>
             </div>
