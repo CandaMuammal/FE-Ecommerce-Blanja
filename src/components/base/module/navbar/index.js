@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
         <div className={style["menu-wrap"]}>
           <div className={style["searchbar"]}>
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="Search" disabled="true"/>
             <div className={style.searchimg}>
               <a href=""><img src={search} alt="" /></a>
             </div>
