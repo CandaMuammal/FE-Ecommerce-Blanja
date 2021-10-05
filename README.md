@@ -108,7 +108,7 @@ npm install
   <span>
    <img src="https://i.postimg.cc/bNVnHwVB/1.png"   alt= border="0" /> <br/><br/><br/><br/>
    <img src="https://i.postimg.cc/J7PHMh8z/2.png"   alt= border="0" /> <br/><br/><br/><br/>
-   <img src="https://i.postimg.cc/7L8fmG3m/3.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/j2MKWXY3/3.png"   alt= border="0" /> <br/><br/><br/><br/>
    <img src="https://i.postimg.cc/yd7WCMrR/4.png"   alt= border="0" /> <br/><br/><br/><br/>
    <img src="https://i.postimg.cc/kM1GLhNV/5.png"   alt= border="0" /> <br/><br/><br/><br/>
    <img src="https://i.postimg.cc/MGSpykwL/6.png"   alt= border="0" /> <br/><br/><br/><br/>
