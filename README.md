@@ -4,6 +4,17 @@
 </p>
 
 
+<p align="center">
+    <br />
+    <br />
+    <br />
+    <a href="https://fe-telegram.vercel.app/login">View Demo</a>
+    ·
+    <a href="https://github.com/CandaMuammal/FE-Ecommerce-Blanja/issues">Report Bug</a>
+    ·
+  </p>
+
+
 ---
 
 
@@ -95,10 +106,16 @@ npm install
 
 <p align="center">
   <span>
-   <img src="https://i.postimg.cc/wTwSH2bN/blanja1-2.png"   alt= border="0" /> <br/><br/><br/><br/>
-   <img src="https://i.postimg.cc/4yJSRH6w/blanja2-2.png"   alt= border="0" /> <br/><br/><br/><br/>
-   <img src="https://i.postimg.cc/wvzWDRGH/blanja3-2.png"   alt= border="0" /> <br/><br/><br/><br/>
-   <img src="https://i.postimg.cc/XJxgFH5c/Screenshot-2021-09-27-063157-2.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/bNVnHwVB/1.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/J7PHMh8z/2.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/7L8fmG3m/3.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/yd7WCMrR/4.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/kM1GLhNV/5.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/MGSpykwL/6.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/0Qt5RbSg/7.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/kGznGzwf/8.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/vHxYk8Hj/9.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/Z5rTYfNx/10.png"   alt= border="0" /> <br/><br/><br/><br/>
   </span>
 </p>
 
