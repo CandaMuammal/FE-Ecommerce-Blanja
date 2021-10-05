@@ -49,7 +49,7 @@ const Rightside3 = () => {
         formData.append('description', form.description)
         formData.append('stock', form.stock)
         formData.append('image', form.image)
-        axios.post(`${process.env.REACT_APP_API_URL}v1/product/`, formData)
+        axios.post(`${process.env.REACT_APP_API_URL}v1/product/`, formData) 
             .then((res) => {
                 alert('success')
             })
