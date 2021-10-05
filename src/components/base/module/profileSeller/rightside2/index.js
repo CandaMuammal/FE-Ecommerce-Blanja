@@ -92,6 +92,9 @@ export class Rightside2 extends Component {
 
             })
             
+        // const filteredProduct = this.state.product.filter((i) => {
+        //     return i.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
+        // })
         
     }
 
