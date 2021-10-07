@@ -11,7 +11,8 @@ toast.configure()
 
 
 const Rightside1 = () => {
-
+    const user = useSelector(state => state.user.profile)
+    console.log(user.username)
     const idUser = localStorage.getItem('id')
 
     const [form, setForm] = useState({

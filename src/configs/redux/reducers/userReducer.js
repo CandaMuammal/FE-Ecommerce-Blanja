@@ -1,13 +1,14 @@
 // reducer user
 
 const initialState = {
-  username: '',
-  email: '',
-  phoneNumber: "",
-  role: '',
-  profile: {},
-  error: null,
-  storeName: "",
+  // username: '',
+  // email: '',
+  // phoneNumber: "",
+  // role: '',
+  profile: {}
+  // error: null,
+  // storeName: "",
+  // image
 }
 const userReducer = (state = initialState, action) => {
 
@@ -15,7 +16,7 @@ const userReducer = (state = initialState, action) => {
     case 'LOGIN_REQUEST':
       return {
         ...state,
-        profile: action.payload,
+        state: action.payload,
       }
     case 'LOGIN_FAILURE':
       return {
