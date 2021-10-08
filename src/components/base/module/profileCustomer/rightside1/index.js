@@ -2,8 +2,12 @@ import React, { Component, useState } from 'react'
 import style from './rightside1.module.css'
 import avabig from '../../../../../Assets/avabig.png'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import {updateUser} from '../../../../../configs/redux/actions/userAction'
 
 
 toast.configure()
@@ -11,17 +15,15 @@ toast.configure()
 
 
 const Rightside1 = () => {
-    const user = useSelector(state => state.user.profile)
-    console.log(user.username)
-    const idUser = localStorage.getItem('id')
+
 
     const [form, setForm] = useState({
-        username: localStorage.getItem('username'),
-        email: localStorage.getItem('email'),
-        phoneNumber: localStorage.getItem('phoneNumber'),
-        image: localStorage.getItem('image'),
-        address: localStorage.getItem('address'),
-        birthdate: localStorage.getItem('birthdate'),
+        username: user.username,
+        email: user.email,
+        phoneNumber: user.phoneNumber,
+        image: user.image,
+        address: user.address,
+        birthdate: user.birthdate,
         imagePreview: null
 
     })
@@ -41,35 +43,7 @@ const Rightside1 = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        const formData = new FormData()
-        formData.append('username', form.username)
-        formData.append('email', form.email)
-        formData.append('phoneNumber', form.phoneNumber)
-        formData.append('birthdate', form.birthdate)
-        formData.append('image', form.image)
-        formData.append('address', form.address)
-
-
-        // formData.append('image', form.image)
-        axios.put(`${process.env.REACT_APP_API_URL}v1/user/${idUser}`, formData)
-        // axios.put('http://localhost:4000/v1/user/60236000', formData)
-        // axios.put(`${process.env.REACT_APP_API_URL}v1/user/customer/${idUser}`, formData)
-
-            .then((res) => {
-                toast('success updated profile!')
-                localStorage.setItem('username', form.username)
-                localStorage.setItem('email', form.email)
-                localStorage.setItem('phoneNumber',form.phoneNumber)
-                localStorage.setItem('birthdate', form.birthdate)
-                localStorage.setItem('address', form.address)
-                localStorage.setItem('image', form.image)
-                console.log(form.username)
-
-            })
-            .catch((err) => {
-                toast(err.message)
-
-            })
+        dispatch(updateUser(form, user))
     }
 
     const handleLogout = () => {
@@ -118,7 +92,7 @@ const Rightside1 = () => {
                     <div className={style.vertical}></div>
                     <div className={style.rightbody}>
                         <input type="file" onChange={handleInputFile} />
-                        <img src={form.image} alt="" />
+                        <img src={avatar} alt="" />
                         {/* <button>Select Image</button> */}
                     </div>
                 </div>

@@ -6,13 +6,18 @@ import myaccount from '../../../../../Assets/myaccount.png'
 import myorder from '../../../../../Assets/myorder.png'
 import shipping from '../../../../../Assets/shipping-address.png'
 import {Link} from 'react-router-dom'
-
-
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
 
 const Leftside = () => {
 
-        const username = localStorage.getItem('username')
-        const avatar = localStorage.getItem('image')
+    const user = useSelector(state => state.rootReducer.user.profile)
+    const history = useHistory()
+    const dispatch = useDispatch()
+
+        const username = user.username
+        const avatar = user.image
         return (
             
 

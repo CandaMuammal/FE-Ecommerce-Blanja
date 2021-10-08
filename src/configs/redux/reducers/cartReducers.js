@@ -17,13 +17,14 @@ export const cartReducer = (state = initialState, action) => {
                 ...state,
                 cartItem: [...state.cartItem, product]
             }
+            
             // if(existItem) {
             //     return {
             //         ...state,
             //         cartItem: state.cartItem.map((x) => x.product === existItem.product ? item : x)
             //     }
             // } else {
-            //     return {
+            //     return 
             //         ...state,
             //         cartItem: state.cartItem.filter((x) => x.product !== action.payload)
             //     }

@@ -142,9 +142,12 @@ const Rightside3 = () => {
                         <input type="text" name="description" value={form.description} onChange={handleChange} />
                     </div>
                 </div>
-                <button onClick={handleSubmit}  className={style.submit}>Add product</button>
-            
-            <button onClick={handleUpdate} className={style.submit}>Update product</button>
+
+                {localStorage.getItem('imagee') ? 
+                <button onClick={handleUpdate} className={style.submit}>Update product</button>
+                :
+                <button onClick={handleSubmit}  className={style.submit}>Add product</button> 
+                }
 
         </div>
 

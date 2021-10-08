@@ -9,12 +9,21 @@ import mail from '../../../../Assets/mail-logo.png'
 import ava from '../../../../Assets/ava.png'
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
 
 
 const Navbar = () => {
 
   const isRole = localStorage.getItem('role')
-  const avatar = localStorage.getItem('image')
+  // const avatar = localStorage.getItem('image')
+  const user = useSelector(state => state.rootReducer.user.profile)
+    const history = useHistory()
+    const dispatch = useDispatch()
+
+        // const username = user.username
+        const avatar = user.image
 
 
   return (

@@ -88,3 +88,31 @@ export const registerSeller = ({username, email, password, phoneNumber, storeNam
 
     });
 };
+
+export const updateUser = (form, data) => (dispatch) => {
+  const formData = new FormData()
+        formData.append('username', form.username)
+        formData.append('email', form.email)
+        formData.append('phoneNumber', form.phoneNumber)
+        formData.append('birthdate', form.birthdate)
+        formData.append('image', form.image)
+        formData.append('address', form.address)
+
+
+        // formData.append('image', form.image)
+        axios.put(`${process.env.REACT_APP_API_URL}v1/user/${data.id}`, formData)
+        // axios.put('http://localhost:4000/v1/user/60236000', formData)
+        // axios.put(`${process.env.REACT_APP_API_URL}v1/user/customer/${idUser}`, formData)
+
+            .then((res) => {
+              const dataResult = res.data.data
+              console.log(dataResult)
+                toast('success updated profile!')
+                dispatch({type:'UPDATE_USER', payload: dataResult})
+
+            })
+            .catch((err) => {
+                toast(err.message)
+
+            })
+}

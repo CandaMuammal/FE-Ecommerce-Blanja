@@ -16,7 +16,7 @@ const userReducer = (state = initialState, action) => {
     case 'LOGIN_REQUEST':
       return {
         ...state,
-        state: action.payload,
+        profile: action.payload,
       }
     case 'LOGIN_FAILURE':
       return {
@@ -32,6 +32,11 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload
+      }
+      case 'UPDATE_USER':
+      return {
+        ...state,
+        profile: action.payload
       }
     default:
       return state
