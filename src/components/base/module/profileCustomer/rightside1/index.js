@@ -19,6 +19,7 @@ const Rightside1 = () => {
     const user = useSelector(state => state.rootReducer.user.profile)
     const history = useHistory()
     const dispatch = useDispatch()
+    const avatar = user.image
 
     const [form, setForm] = useState({
         username: user.username,
