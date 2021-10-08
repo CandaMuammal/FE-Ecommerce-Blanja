@@ -97,7 +97,7 @@ export const updateUser = (form, data) => (dispatch) => {
         formData.append('birthdate', form.birthdate)
         formData.append('image', form.image)
         formData.append('address', form.address)
-
+   
 
         // formData.append('image', form.image)
         axios.put(`${process.env.REACT_APP_API_URL}v1/user/${data.id}`, formData)
@@ -107,7 +107,7 @@ export const updateUser = (form, data) => (dispatch) => {
             .then((res) => {
               const dataResult = res.data.data
               console.log(dataResult)
-                toast('success updated profile!')
+                toast('success updated profile!!')
                 dispatch({type:'UPDATE_USER', payload: dataResult})
 
             })
