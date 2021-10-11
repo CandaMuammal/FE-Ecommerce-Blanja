@@ -5,18 +5,6 @@ import 'react-toastify/dist/ReactToastify.css'
 
 toast.configure()
 
-// export const increment = () => (dispatch, getState) => {
-//   // axios.get('')
-//   const { product } = getState()
-//   const newCount = product.count + 1
-//   setTimeout(() => {
-//     dispatch({ type: 'INCREMENT', payload: newCount })
-//   }, 2000)
-// }
-
-// export const decrement = () => {
-//   return { type: 'DECREMENT', coba: 'risanocoba@gamil.com', payload: ['sepeda', 'motor'] }
-// }
 
 export const login = (data, history) => async (dispatch) => {
   try {
