@@ -35,9 +35,9 @@ const Navbar = () => {
         </div>
         <div className={style["menu-wrap"]}>
           <div className={style["searchbar"]}>
-            <input type="text" placeholder="Search" disabled="true"/>
+            {/* <input type="text" placeholder="Search" disabled="true"/> */}
             <div className={style.searchimg}>
-              <Link to="/search"><img src={search} alt="" /></Link>
+              <Link to="/search"><button><img src={search} alt="" /></button></Link>
             </div>
           </div>
           <div className={style.filter}>

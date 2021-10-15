@@ -63,8 +63,17 @@
   .searchimg {
       position: absolute;
       right: 41%;
+      margin-right: 150px;
   }
   
+  .searchimg button {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-right: 20%;
+}
   .filter {
       display: flex;
       flex-direction: row;
@@ -72,6 +81,7 @@
       width: 10%;
       align-items: center;
       justify-content: center;
+      margin-right: 400px;
   
   }
   
