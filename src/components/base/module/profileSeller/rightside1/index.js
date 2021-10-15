@@ -3,10 +3,13 @@ import style from './rightside.module.css'
 import avabig from '../../../../../Assets/avabig.png'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
+import {updateUserSeller} from '../../../../../configs/redux/actions/userAction'
 
 
 toast.configure()
@@ -14,15 +17,21 @@ toast.configure()
 
 const Rightside1 = () => {
 
-    const idUser = localStorage.getItem('id')
+    const user = useSelector(state => state.rootReducer.user.profile)
+    const history = useHistory()
+    const dispatch = useDispatch()
+    const avatar = user.image
+
+
+    // const idUser = localStorage.getItem('id')
 
     const [form, setForm] = useState({
-        username: localStorage.getItem('username'),
-        email: localStorage.getItem('email'),
-        phoneNumber: localStorage.getItem('phoneNumber'),
-        image: localStorage.getItem('image'),
-        storeName: localStorage.getItem('storeName'),
-        imagePreview: null
+        username: user.username,
+        email: user.email,
+        phoneNumber: user.phoneNumber,
+        image: user.image,
+        storeName: user.storeName,
+    
 
     })
     const handleChange = (e) => {
@@ -32,41 +41,24 @@ const Rightside1 = () => {
     }
 
     const handleInputFile = (e) => {
-        setForm({
+        if (e.target.files) {
+            setForm({
             ...form,
             image: e.target.files[0],
             imagePreview: URL.createObjectURL(e.target.files[0])
         })
-        console.log(e.target.files)
+        } else {
+            setForm({
+                ...form,
+                image: user.image,
+                // imagePreview: URL.createObjectURL(e.target.files[0])
+            })
+        }
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        const formData = new FormData()
-        formData.append('username', form.username)
-        formData.append('email', form.email)
-        formData.append('phoneNumber', form.phoneNumber)
-        formData.append('storeName', form.storeName)
-        formData.append('image', form.image)
+        dispatch(updateUserSeller(form, user))
 
-
-        // formData.append('image', form.image)
-        axios.put(`${process.env.REACT_APP_API_URL}v1/user/${idUser}`, formData)
-            // axios.put('http://localhost:4000/v1/user/60236000', formData)
-
-            .then((res) => {
-                toast('success updated profile!')
-                localStorage.setItem('username', form.username)
-                localStorage.setItem('email', form.email)
-                localStorage.setItem('phoneNumber', form.phoneNumber)
-                localStorage.setItem('storeName', form.storeName)
-                localStorage.setItem('image', form.image)
-                // console.log(form.username)
-
-            })
-            .catch((err) => {
-                toast(err.message)
-
-            })
     }
 
     const handleLogout = () => {
@@ -111,7 +103,7 @@ const Rightside1 = () => {
                     <div className={style.vertical}></div>
                     <div className={style.rightbody}>
                         <input type="file" onChange={handleInputFile} />
-                        <img src={form.image} alt="" />
+                        <img src={avatar} alt="" />
                         {/* <button>Select Image</button> */}
                     </div>
                 </div>

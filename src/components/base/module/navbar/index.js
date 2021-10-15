@@ -31,13 +31,13 @@ const Navbar = () => {
     <div className={style.nav}>
       <div className={style["nav-wrap"]}>
         <div className={style.logo}>
-          <Link to="./home"><img src={logo} alt="" /></Link>
+          <Link to="/home"><img src={logo} alt="" /></Link>
         </div>
         <div className={style["menu-wrap"]}>
           <div className={style["searchbar"]}>
             <input type="text" placeholder="Search" disabled="true"/>
             <div className={style.searchimg}>
-              <a href=""><img src={search} alt="" /></a>
+              <Link to="/search"><img src={search} alt="" /></Link>
             </div>
           </div>
           <div className={style.filter}>

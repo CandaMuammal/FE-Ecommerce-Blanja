@@ -11,7 +11,7 @@
     height: 256px;
     margin-top: 114px;
     /* background-color: lightsalmon; */
-    padding: 0px 10px 20px 10px;
+    padding: 0px 30px 20px 10px;
     border: 1px solid gray;
     border-radius: 10px;
     box-shadow:1px 1px 1px 1px grey;
@@ -65,10 +65,14 @@
     /* margin: 0 6%; */
     border-radius: 30px;
     border: 0;
-    margin-left:10%;
+    margin-left:13%;
     padding-right: 22%;
     box-sizing: border-box;
     padding-top: 15px;
+}
+
+.righbox button a {
+    padding-left: 20%;
 }
 
 .rightbox .payment-open{
@@ -84,6 +88,7 @@
 .payment-open a:link, .payment-open a:visited {
     text-decoration: none;
     color: white;
+    padding-left: 30%;
 }
 
 .payment {
@@ -96,6 +101,11 @@
     z-index: 10;
     opacity: 0;
     visibility: hidden;
+}
+
+.payment input {
+    width: 15px;
+    height: 15px;
 }
 
 .payment-heading {
@@ -204,7 +214,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: -8px;
+    margin-top: -15px;
     /* border: 1px solid black; */
     /* padding-top: 10px; */
 }

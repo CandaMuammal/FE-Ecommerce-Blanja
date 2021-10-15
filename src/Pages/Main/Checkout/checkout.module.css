@@ -28,6 +28,27 @@
     flex-direction: column;
 }
 
+.leftbox1 {
+    width: 720px;
+    height: 190px;
+    /* background-color: lavender; */
+    margin-bottom: 20px;
+    margin-top: 40px;
+    padding: 30px 0px 0 20px;
+    border: 1px solid gray;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow:1px 1px 1px 1px grey;
+    margin-left: 0px;
+
+}
+
+.leftbox1 p {
+    font-size: 16px;
+}
+
+
 
 @media (max-width: 576px) {
     .main {

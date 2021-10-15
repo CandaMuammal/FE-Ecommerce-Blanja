@@ -69,10 +69,10 @@ const Login = () => {
 
 
         <h5>Please login with your account</h5>
-        <div className={style["option-button"]}>
+        {/* <div className={style["option-button"]}>
           <button className={style.customer}> <Link to="./login">Customer</Link></button>
           <button className={style.seller}><Link to="/login">Seller</Link></button>
-        </div>
+        </div> */}
         <form onSubmit={formik.handleSubmit}>
 
           <div>
@@ -93,7 +93,7 @@ const Login = () => {
         </form>
 
 
-        <Link to="./resetpassword">Forgot password?</Link>
+        <h6><Link to="./resetpassword">Forgot password?</Link></h6>
         {/* <ButtonLogin/> */}
         <h7>Don't have a Tokopedia account? <Link to="./signup">Register</Link></h7>
       </div>

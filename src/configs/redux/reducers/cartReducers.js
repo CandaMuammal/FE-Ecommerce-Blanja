@@ -8,6 +8,7 @@ export const cartReducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.ADD_TO_CART:
             const product = action.payload;
+            console.log(product)
             // product.qty = 1
             // const product
 

@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux'
 const Rightside = (props) => {
 
 
+    console.log(props.totalPrice) 
     const cart = useSelector(state => state.cart)
     const { cartItem } = cart
     
@@ -20,7 +21,7 @@ const Rightside = (props) => {
                     <h4>Shopping summary</h4>
                     <div className={style.order} >
                         <h6>Order</h6>
-                        <h5>&nbsp;{cartItem[0].price}</h5>
+                        <h5>&nbsp;&nbsp;&nbsp;{props.totalPrice}</h5>
                     </div>
                     <div className={style.delivery}>
                         <h6>Delivery</h6>
@@ -29,7 +30,7 @@ const Rightside = (props) => {
                     <hr />
                     <div className={style["shopping-summary"]}>
                         <h6>Shopping summary</h6>
-                        <h5>{cartItem[0].price + 50000}</h5>
+                        <h5>{props.totalPrice + 50000}</h5>
                     </div>
                     <button className={style["payment-open"]}><a href="#payment">Select payment</a></button>
 
@@ -67,7 +68,7 @@ const Rightside = (props) => {
                                         <h6>Shopping summary </h6>
                                         <div className={style.order}>
                                             <h6>Order</h6>
-                                            <h5>&nbsp;{cartItem[0].price}</h5>
+                                            <h5>&nbsp;{props.totalPrice}</h5>
                                         </div>
                                         <div className={style.delivery}>
                                             <h6>Delivery</h6>
@@ -80,7 +81,7 @@ const Rightside = (props) => {
                                 </div>
                                 <div className={style["payment-footer"]}>
                                     <div className={style["payment-summary"]}>
-                                        <h6>Shopping summary <br /><br /><span>{cartItem[0].price + 50000}</span></h6>
+                                        <h6>Shopping summary <br /><br /><span>{props.totalPrice + 50000}</span></h6>
 
                                     </div>
                                     <div className={style.buy}>

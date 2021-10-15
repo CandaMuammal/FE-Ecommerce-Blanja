@@ -3,7 +3,7 @@ import Checkout from '../../../../../Pages/Main/Checkout'
 import style from './rightside.module.css'
 import {Link} from 'react-router-dom'
 
-const Rightside = ({id, qty, name, price, image, description}) => {
+const Rightside = ({price}) => {
 
         return (
 

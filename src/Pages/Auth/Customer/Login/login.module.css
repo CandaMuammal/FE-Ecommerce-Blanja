@@ -68,12 +68,22 @@ input{
 
 }
 
-a {
+h7 a {
     position: relative;
-    left: 20%;
-    text-decoration: underline;
+    left: 0%;
+    text-decoration: none;
     color: #DB3022;
     margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+h6 a {
+    /* position: relative; */
+    /* left: 100%; */
+    position: unset;
+    text-decoration: none;
+    color: #DB3022;
+    margin-bottom: 150px;
 }
 
 .login-button {
@@ -83,6 +93,7 @@ a {
     color: white;
     border-radius: 30px;
     border: 1px solid gray;
+    margin-bottom: 10px;
 }
 
 h5 a{

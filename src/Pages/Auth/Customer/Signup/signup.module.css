@@ -45,11 +45,17 @@
     height: 48px;
     background: white;
     border: 1px solid #DB3022;
+    color: black;
 }
 
-.option-button .customer:hover, .option-button .seller:hover  {
+button a {
+    color: black;
+}
+
+.option-button .customer:checked, .option-button .seller:checked  {
     background: #DB3022;
     color: white;
+    
 }
 
 form {
@@ -74,7 +80,7 @@ form input{
 a {
     /* position: relative; */
     /* left: 10%; */
-    text-decoration: underline;
+    text-decoration: none;
     color: #DB3022;
     margin-bottom: 20px;
 }

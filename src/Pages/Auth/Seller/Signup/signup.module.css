@@ -52,7 +52,7 @@ button a {
     text-decoration: none;
 }
 
-.option-button .customer:hover, .option-button .seller:hover  {
+.option-button .customer:checked, .option-button .seller:checked  {
     background: #DB3022;
     color: white;
 }

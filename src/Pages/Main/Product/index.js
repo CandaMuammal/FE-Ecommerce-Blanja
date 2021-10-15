@@ -60,7 +60,7 @@ import { addToCart } from '../../../configs/redux/actions/cartActions'
 //         )
 //     }
 // }
-
+ 
 const Product = ({ match}) => {
 
     // const [qty, setQty] = useState(1)

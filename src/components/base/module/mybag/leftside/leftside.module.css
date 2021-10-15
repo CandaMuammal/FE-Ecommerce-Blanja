@@ -65,6 +65,7 @@
     width: 720px;
     height: 126px;
     margin-bottom: 20px;
+    margin-left: -20px;
     /* background-color: lightblue; */
     display: flex;
     flex-direction: row;
@@ -136,6 +137,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.leftbox2 .check input {
+    width: 15px;
+    height: 15px;
 }
 
 /* .leftbox3 {

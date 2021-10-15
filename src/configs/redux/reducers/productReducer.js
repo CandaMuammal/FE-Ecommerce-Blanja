@@ -18,6 +18,7 @@ export const ProductReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.GET_PRODUCT_REQUEST:
             return {
+                ...state,
                 loading: true,
                 products: []
             }

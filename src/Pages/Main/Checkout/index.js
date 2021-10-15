@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './checkout.module.css'
 import Navbar from '../../../components/base/module/navbar'
-import Leftsides from '../../../components/base/module/checkout/leftside'
+import Leftsides from '../../../components/base/module/mybag/leftside/index'
 import Rightside from '../../../components/base/module/checkout/rightside'
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
@@ -15,37 +15,72 @@ toast.configure()
 
 const Checkout = () => {
 
-    
+
     const history = useHistory()
 
+    // const cart = useSelector(state => state.cart)
+    // const username = localStorage.getItem('username')
     const cart = useSelector(state => state.cart)
-    const username = localStorage.getItem('username')
-
-
     const { cartItem } = cart
+    const address = localStorage.getItem('address')
+    const username = localStorage.getItem('username')
+    const phone = localStorage.getItem('phoneNumber')
 
+
+    // const { cartItem } = cart
+    // let payload = {}
+    
     // console.log(userData.username)
-    console.log(cartItem[0].name)
+    console.log(cartItem)
+    const checkout = cartItem.map(item =>{
+    //  
+    return item
+    // console.log(item.price)
+    })
 
-    const payload = {
-        username,
-        name: cartItem[0].name,
-        price: cartItem[0].price + 50000,
-        qty: cartItem[0].qty,
-        image: cartItem[0].image,
+    const totalPrice = checkout.reduce(function(val, element) {
+        return val + element.price
+    }, 0)
+
+    const totalQty = checkout.reduce(function(val, element) {
+        return val + element.qty
+    }, 0)
+
+    console.log(totalPrice)
+
+    let allname = ""
+    if (checkout.length > 0) {
+        //  allname = checkout[0].name +', '+ checkout[1].name
+      const filterName = checkout.map(item => {
+           return item.name
+        })
+        allname = filterName.join(', ')
+        console.log(allname)
+    } else {
+        allname = checkout[0].name
     }
+
+
+
+   const payload = {
+            username,
+            name: allname,
+            price: totalPrice + 50000,
+            qty: totalQty,
+            // image: cartItem.image,
+        }
 
     const handlePayment = () => {
 
         axios.post(`${process.env.REACT_APP_API_URL}v1/history/`, payload)
-        
-        .then((res) => {
-            toast('success')
-            history.push('/home')
-        })
-        .catch(() => {
-            toast('failed')
-        })
+
+            .then((res) => {
+                toast('success')
+                history.push('/home')
+            })
+            .catch(() => {
+                toast('failed')
+            })
     }
 
 
@@ -55,20 +90,41 @@ const Checkout = () => {
             <div className={style.main}>
                 <div className={style["main-wrap"]}>
                     <div className={style["main-container"]}>
-                        
+
                         <div className={style.left}>
-                        <Leftsides
-                          key={cartItem[0].id}
-                          id={cartItem[0].id}
-                          qty={cartItem[0].qty}
-                          name={cartItem[0].name}
-                          price={cartItem[0].price}
-                          image={cartItem[0].image}
-                          description={cartItem[0].description}
-                        />
+                            <h1>Checkout</h1>
+                            <h4>Shipping Address</h4>
+                            <div className={style.leftbox1}>
+                                <h4>{username}</h4>
+                                <p>{address}</p>
+                                <p>{phone}</p>
+                            </div>
+                            {/* <Leftsides
+                          key={cartItem.id}
+                          id={cartItem.id}
+                          qty={cartItem.qty}
+                          name={cartItem.name}
+                          price={cartItem.price}
+                          image={cartItem.image}
+                          description={cartItem.description}
+                        /> */}
+                            {cartItem.map(item => (
+                            <Leftsides
+                                key={item.id}
+                                id={item.id}
+                                qty={item.qty}
+                                name={item.name}
+                                price={item.price}
+                                image={item.image}
+                                description={item.description}
+                            />
+                          ))} 
                         </div>
-                        
-                        <Rightside onClick={handlePayment}/>
+
+                        <Rightside 
+                        onClick={handlePayment}
+                        totalPrice={totalPrice}
+                        />
                     </div>
                 </div>
             </div>

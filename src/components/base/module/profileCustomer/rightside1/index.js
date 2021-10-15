@@ -5,9 +5,10 @@ import axios from 'axios'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router'
+import {updateUser} from '../../../../../configs/redux/actions/userAction'
+
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import {updateUser} from '../../../../../configs/redux/actions/userAction'
 
 
 toast.configure()
@@ -29,21 +30,36 @@ const Rightside1 = () => {
         address: user.address,
         birthdate: user.birthdate,
         imagePreview: null
-
+ 
     })
     const handleChange = (e) => {
         let data = { ...form }
-        data[e.target.name] = e.target.value
+        data[e.target.name] = e.target.value 
         setForm(data)
     }
 
+    // const handleInputFile = (e) => {
+    //     setForm({
+    //         ...form,
+    //         image: e.target.files[0],
+    //         imagePreview: URL.createObjectURL(e.target.files[0])
+    //     })
+    //     console.log(e.target.files)
+    // }
     const handleInputFile = (e) => {
-        setForm({
+        if (e.target.files) {
+            setForm({
             ...form,
             image: e.target.files[0],
             imagePreview: URL.createObjectURL(e.target.files[0])
         })
-        console.log(e.target.files)
+        } else {
+            setForm({
+                ...form,
+                image: user.image,
+                // imagePreview: URL.createObjectURL(e.target.files[0])
+            })
+        }
     }
     const handleSubmit = (e) => {
         e.preventDefault()

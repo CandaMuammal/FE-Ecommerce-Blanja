@@ -18,23 +18,22 @@ const Mybag = ({ match }) => {
     const cart = useSelector(state => state.cart)
     const { cartItem } = cart
 
-    // const { loading, error, product } = productDetail
+    const totalPrice = (products) => {
+        if(products.length > 0) {
+            let result = 0
+            products.map(item => {
+                return result = item.price + result
+            } )
+          
+                
+        
+        return result    
+        } else {
+            return 1
+        }
+            
+    }
 
-    const { productDetails, error, loading } = useSelector(state => state.product)
-
-    // const { loading, error, product } = productDetail
-
-    useEffect(() => {
-        dispatch(getProductDetail(match.params.id))
-
-    }, dispatch)
-
-    useEffect(() => {
-        dispatch(addToCart())
-        // dispatch(addToCart(match.params.id))
-
-        // }, [dispatch, match])
-    }, dispatch)
     return (
         <>
             <Navbar />
@@ -45,25 +44,25 @@ const Mybag = ({ match }) => {
                             <h1>My Bag</h1>
                             {cartItem.map(item => (
                                 <Leftside
-                                    key={cartItem[0].id}
-                                    id={cartItem[0].id}
-                                    qty={cartItem[0].qty}
-                                    name={cartItem[0].name}
-                                    price={cartItem[0].price}
-                                    image={cartItem[0].image}
-                                    description={cartItem[0].description}
+                                    key={item.id}
+                                    id={item.id}
+                                    qty={item.qty}
+                                    name={item.name}
+                                    price={item.price}
+                                    image={item.image}
+                                    description={item.description}
                                 />
                             ))}
                         </div>
 
                         <Rightside
-                            key={cartItem[0].id}
-                            id={cartItem[0].id}
-                            qty={cartItem[0].qty}
-                            name={cartItem[0].name}
-                            price={cartItem[0].price}
-                            image={cartItem[0].image}
-                            description={cartItem[0].description}
+                            // key={cartItem.id}
+                            // id={cartItem.id}
+                            // qty={cartItem.qty}
+                            // name={cartItem.name}
+                            price={totalPrice(cartItem)}
+                            // image={cartItem.image}
+                            // description={cartItem.description}
                         />
                     </div>
                 </div>

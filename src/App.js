@@ -169,6 +169,7 @@ import SignupSeller from './Pages/Auth/Seller/Signup'
 import Home from './Pages/Main/Home';
 import Product from './Pages/Main/Product';
 import Search from './Pages/Main/Search';
+import Category from './Pages/Main/Category';
 // import style from './Pages/Auth/Customer/Login/'
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
 import PrivateRoute from './configs/route/privateRoute';
@@ -200,6 +201,7 @@ const App = () => {
         {/* <PrivateRoute path="/" component={Home} /> */}
         <PrivateRoute path="/product/:id" component={Product} />
         <PrivateRoute path="/search" component={Search} />
+        <PrivateRoute path="/category" component={Category} />
         <PrivateRoute path="/checkout" component={Checkout} />
         <PrivateRoute path="/mybag" component={Mybag} />
         <CustomerRoute path="/profilecustomer1" component={ProfileCust1} />

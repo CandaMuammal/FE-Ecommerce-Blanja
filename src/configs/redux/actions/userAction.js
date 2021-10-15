@@ -14,7 +14,7 @@ export const login = (data, history) => async (dispatch) => {
     dispatch({ type: 'LOGIN_REQUEST', payload: dataResult })
     console.log(dataResult);
 
-    
+
     localStorage.setItem('token', dataResult.token)
     localStorage.setItem('username', dataResult.username)
     localStorage.setItem('email', dataResult.email)
@@ -42,9 +42,9 @@ export const login = (data, history) => async (dispatch) => {
 
 }
 
-export const registerCustomer = ({username, email, password}, history) => (dispatch) => {
+export const registerCustomer = ({ username, email, password }, history) => (dispatch) => {
   axios
-    .post(`${process.env.REACT_APP_API_URL}v1/user/registerCustomer`, {username, email, password})
+    .post(`${process.env.REACT_APP_API_URL}v1/user/registerCustomer`, { username, email, password })
     .then((result) => {
       toast('successfully created an account. please login first')
       const dataResult = result.data.data
@@ -60,9 +60,9 @@ export const registerCustomer = ({username, email, password}, history) => (dispa
     });
 };
 
-export const registerSeller = ({username, email, password, phoneNumber, storeName}, history) => (dispatch) => {
+export const registerSeller = ({ username, email, password, phoneNumber, storeName }, history) => (dispatch) => {
   axios
-    .post(`${process.env.REACT_APP_API_URL}v1/user/registerSeller`, {username, email, password, phoneNumber, storeName})
+    .post(`${process.env.REACT_APP_API_URL}v1/user/registerSeller`, { username, email, password, phoneNumber, storeName })
     .then((result) => {
       toast('succesfully created an account. please login first')
       const dataResult = result.data.data
@@ -79,28 +79,74 @@ export const registerSeller = ({username, email, password, phoneNumber, storeNam
 
 export const updateUser = (form, data) => (dispatch) => {
   const formData = new FormData()
-        formData.append('username', form.username)
-        formData.append('email', form.email)
-        formData.append('phoneNumber', form.phoneNumber)
-        formData.append('birthdate', form.birthdate)
-        formData.append('image', form.image)
-        formData.append('address', form.address)
-   
+  formData.append('username', form.username)
+  formData.append('email', form.email)
+  formData.append('phoneNumber', form.phoneNumber)
+  formData.append('birthdate', form.birthdate)
+  formData.append('image', form.image)
+  formData.append('address', form.address)
 
-        // formData.append('image', form.image)
-        axios.put(`${process.env.REACT_APP_API_URL}v1/user/${data.id}`, formData)
-        // axios.put('http://localhost:4000/v1/user/60236000', formData)
-        // axios.put(`${process.env.REACT_APP_API_URL}v1/user/customer/${idUser}`, formData)
 
-            .then((res) => {
-              const dataResult = res.data.data
-              console.log(dataResult)
-                toast('success updated profile!!')
-                dispatch({type:'UPDATE_USER', payload: dataResult})
+  // formData.append('image', form.image)
+  axios.put(`${process.env.REACT_APP_API_URL}v1/user/${data.id}`, formData)
+    // axios.put('http://localhost:4000/v1/user/60236000', formData)
+    // axios.put(`${process.env.REACT_APP_API_URL}v1/user/customer/${idUser}`, formData)
 
-            })
-            .catch((err) => {
-                toast(err.message)
+    .then((res) => {
+      // const dataResult = res.data.data
+      // console.log(dataResult)
+      //   toast('success updated profile!!')
+      //   dispatch({type:'UPDATE_USER', payload: dataResult})
+      axios.get(`${process.env.REACT_APP_API_URL}v1/user/${data.id}`)
+        .then((res) => {
+          const dataResult = res.data.data
+          console.log(dataResult)
+          toast('success updated profile!')
+          dispatch({ type: 'UPDATE_USER', payload: dataResult })
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    })
+    .catch((err) => {
+      toast(err.message)
 
-            })
+    })
+}
+
+export const updateUserSeller = (form, data) => (dispatch) => {
+  const formData = new FormData()
+  formData.append('username', form.username)
+  formData.append('email', form.email)
+  formData.append('phoneNumber', form.phoneNumber)
+  formData.append('storeName', form.storeName)
+  formData.append('image', form.image)
+  // formData.append('address', form.address)
+
+
+  // formData.append('image', form.image)
+  axios.put(`${process.env.REACT_APP_API_URL}v1/user/seller/${data.id}`, formData)
+    // axios.put('http://localhost:4000/v1/user/60236000', formData)
+    // axios.put(`${process.env.REACT_APP_API_URL}v1/user/customer/${idUser}`, formData)
+
+    .then((res) => {
+      // const dataResult = res.data.data
+      // console.log(dataResult)
+      //   toast('success updated profile!!')
+      //   dispatch({type:'UPDATE_USER', payload: dataResult})
+      axios.get(`${process.env.REACT_APP_API_URL}v1/user/${data.id}`)
+        .then((res) => {
+          const dataResult = res.data.data
+          console.log(dataResult)
+          toast('success updated profile!')
+          dispatch({ type: 'UPDATE_USER', payload: dataResult })
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    })
+    .catch((err) => {
+      toast(err.message)
+
+    })
 }

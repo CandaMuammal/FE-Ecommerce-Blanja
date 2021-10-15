@@ -1,26 +1,69 @@
-import React, { useState } from 'react'
+import React from 'react'
 import style from './rightside3.module.css'
 import bigbox from '../../../../../Assets/bigbox.png'
 import smallbox from '../../../../../Assets/smallbox.png'
 import writing from '../../../../../Assets/writing.png'
 import axios from 'axios'
 import Product from '../../../../../Pages/Main/Product'
+import { useHistory } from 'react-router'
+import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { getProductDetail, getProduct } from '../../../../../configs/redux/actions/productAction'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+
+toast.configure()
 
 
 const Rightside3 = () => {
+    const history = useHistory()
+
+
+    const dispatch = useDispatch()
+
+    const  product = useSelector(state => state.product.productDetails)
+
+    // useEffect(() => {
+    //     dispatch(getProduct())
+    // }, [dispatch])
+
+ 
+
+    console.log(product.name)
+
+    useEffect(() => {
+       setForm({
+        name: product.name,
+        price: product.price,
+        stock: product.stock,
+        color: product.color,
+        size: product.size,
+        idCategory: product.idCategory,
+        category: product.category,
+        description: product.description,
+        image: product.image,
+       })
+       console.log(product)
+    }, [product])
+
+
+    // const item = product.map()
+    // console.log(item)
 
     const [form, setForm] = useState({
-        name: localStorage.getItem('name'),
-        price: localStorage.getItem('price'),
-        stock: localStorage.getItem('stock'),
-        color: localStorage.getItem('color'),
-        size: localStorage.getItem('size'),
-        idCategory: localStorage.getItem('idCategory'),
-        category: localStorage.getItem('category'),
-        description: localStorage.getItem('description'),
-        image: localStorage.getItem('imagee'),
-        // imagePreview: null
+        name: product.name,
+        price: product.price,
+        stock: product.stock,
+        color: product.color,
+        size: product.size,
+        idCategory: product.idCategory,
+        category: product.category,
+        description: product.description,
+        image: product.image,
+        imagePreview: null
     })
+
     const handleChange = (e) => {
         setForm({
             ...form,
@@ -29,11 +72,19 @@ const Rightside3 = () => {
     }
 
     const handleInputFile = (e) => {
-        setForm({
-            ...form,
-            image: e.target.files[0],
-            // imagePreview: URL.createObjectURL(e.target.files[0])
-        })
+        if (e.target.files) {
+            setForm({
+                ...form,
+                image: e.target.files,
+                imagePreview: URL.createObjectURL(e.target.files[0])
+            })
+        } else {
+            setForm({
+                ...form,
+                image: product.image,
+                // imagePreview: URL.createObjectURL(e.target.files[0])
+            })
+        }
     }
 
     const handleSubmit = (e) => {
@@ -51,10 +102,11 @@ const Rightside3 = () => {
         formData.append('image', form.image)
         axios.post(`${process.env.REACT_APP_API_URL}v1/product/`, formData) 
             .then((res) => {
-                alert('success')
+                toast('success add product')
+                history.push('/home')
             })
             .catch(() => {
-                alert('failed')
+                toast('failed')
             })
     }
 
@@ -72,12 +124,14 @@ const Rightside3 = () => {
         formData.append('stock', form.stock)
         formData.append('image', form.image)
 
-        axios.put(`${process.env.REACT_APP_API_URL}v1/product/${localStorage.getItem('id')}`, formData)
+        axios.put(`${process.env.REACT_APP_API_URL}v1/product/${product.id}`, formData)
             .then((res) => {
-                alert('success')
+                toast('success updated product')
+                history.push('/home')
+
             })
             .catch(() => {
-                alert('failed')
+                toast('failed')
             })
     }
 
@@ -140,10 +194,10 @@ const Rightside3 = () => {
                     <div className={style.body}>
                         <div className={style.writing}><img src={writing} alt="" /></div>
                         <input type="text" name="description" value={form.description} onChange={handleChange} />
-                    </div>
+                    </div> 
                 </div>
 
-                {localStorage.getItem('imagee') ? 
+                {product.id ? 
                 <button onClick={handleUpdate} className={style.submit}>Update product</button>
                 :
                 <button onClick={handleSubmit}  className={style.submit}>Add product</button> 

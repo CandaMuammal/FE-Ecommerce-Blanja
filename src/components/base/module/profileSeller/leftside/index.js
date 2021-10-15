@@ -5,11 +5,17 @@ import edit from '../../../../../Assets/edit.png'
 import store from '../../../../../Assets/store.png'
 import product from '../../../../../Assets/product.png'
 import order from '../../../../../Assets/order.png'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
 // import { Form } from 'react-bootstrap'
 
 const Leftside = () => {
         const username = localStorage.getItem('username')
-        const avatar = localStorage.getItem('image')
+        const user = useSelector(state => state.rootReducer.user.profile)
+    const history = useHistory()
+    const dispatch = useDispatch()
+    const avatar = user.image
         return (
 
             <div class={style.leftside}>
@@ -34,7 +40,7 @@ const Leftside = () => {
                         <div class={style.dropdown}>
                             <button class={style.dropbtn}>Store</button>
                             <div class={style["dropdown-content"]}>
-                                <a href="./profileseller1">Store Profile</a>
+                                <a href="/profileseller1">Store Profile</a>
                             </div>
                         </div>
                     </div>
@@ -48,8 +54,8 @@ const Leftside = () => {
                         <div class={style.dropdown}>
                             <button class={style.dropbtn}>Product</button>
                             <div class={style["dropdown-content"]}>
-                                <a href="./profileseller2">My Products </a>
-                                <a href='./profileseller3'>My Selling Products</a>
+                                <a href="/profileseller2">My Products </a>
+                                <a href='/profileseller3'>My Selling Products</a>
                             </div>
                         </div>
 
@@ -63,8 +69,8 @@ const Leftside = () => {
                     <div class={style.dropdown}>
                             <button class={style.dropbtn}>Order</button>
                             <div class={style["dropdown-content"]}>
-                                <a href="./profileseller4">Order </a>
-                                <a href='./profileseller4'>Order Cancel</a>
+                                <a href="/profileseller4">Order </a>
+                                <a href='/profileseller4'>Order Cancel</a>
                             </div>
                         </div>
                     </div>

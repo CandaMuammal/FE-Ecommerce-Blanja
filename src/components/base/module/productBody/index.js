@@ -27,8 +27,8 @@ const history = useHistory()
 const dispatch = useDispatch()
 
 const addToCartHandle = () => {
-    dispatch(addToCart( {id, qty, name, price, image, description}, history))
     try {
+        dispatch(addToCart( {id, qty, name, price, image, description}, history))
         history.push("/mybag");
     } catch {
         toast('cannot add product')

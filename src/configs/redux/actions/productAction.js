@@ -50,6 +50,25 @@ export const getProductDetail = (id) => async (dispatch) => {
   }
 }
 
+export const updateProduct = (id) => async (dispatch) => {
+  try {
+    // dispatch({type: actionTypes.GET_PRODUCT_DETAIL_REQUEST})
+
+    const { data } =await axios.get(`${process.env.REACT_APP_API_URL}v1/product/${id}`)
+
+    // console.log(data.data)
+    dispatch({
+      type: actionTypes.GET_PRODUCT_DETAIL_SUCCESS,
+      payload: data.data
+    })
+  } catch (error) {
+    dispatch({
+      type: actionTypes.GET_PRODUCT_DETAIL_FAIL,
+      payload: error.response && error.response.data.message ? error.response.data.message : error.message
+    })
+  }
+}
+
 export const removeProductDetail = () => (dispatch) => {
   dispatch({
     type:actionTypes.GET_PRODUCT_DETAIL_RESET

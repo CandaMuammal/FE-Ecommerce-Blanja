@@ -35,6 +35,8 @@
 
 }
 
+
+
 .card-group{
     width: 100%;
     height: 300px;
@@ -97,6 +99,9 @@
     align-items: center;
 }
 
+.star img {
+    padding-bottom: 15px;
+}
 .card-popular {
     width: 80%;
     height: 1100px;
