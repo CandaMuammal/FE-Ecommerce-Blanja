@@ -6,7 +6,8 @@ import plus from '../../../../../Assets/plus.png'
 import minus from '../../../../../Assets/minus.png'
 
 
-const Leftside = ({id, qty, name, price, image, description}) => {
+const Leftside = ({id, qtyy, name, price, image, description}) => {
+    const total = price * qtyy
     return ( 
         <div className={style.leftside}>
 
@@ -38,13 +39,13 @@ const Leftside = ({id, qty, name, price, image, description}) => {
                             {/* <button className={style.minus}>
                                 <img src={minus} alt=""/>
                             </button> */}
-                            <h4> Qty: 1</h4>
+                            <h4> Qty: {qtyy}</h4>
                             {/* <button className={style.plus}>
                                 <img src={plus} alt=""/>
                             </button> */}
                         </div>
                         <div className={style.price}>
-                            <h4>{price}</h4>
+                            <h4>{total}</h4>
                         </div>
                     </div>
                     {/* <div className={style.leftbox3}>

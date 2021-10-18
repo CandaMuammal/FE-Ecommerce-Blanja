@@ -18,21 +18,35 @@ const Mybag = ({ match }) => {
     const cart = useSelector(state => state.cart)
     const { cartItem } = cart
 
-    const totalPrice = (products) => {
-        if(products.length > 0) {
-            let result = 0
-            products.map(item => {
-                return result = item.price + result
-            } )
-          
-                
+    const checkout = cartItem.map(item =>{
+        //  
+        return item
+        // console.log(item.price)
+        })
+    
+        const totalPrice = checkout.reduce(function(val, element) {
+            return val + (element.price*element.qtyy)
+        }, 0)
+    
+        const totalQty = checkout.reduce(function(val, element) {
+            return val + element.qtyy
+        }, 0)
+
+    // const totalPrice = (products) => {
+    //     if(products.length > 0) {
+    //         let result = 0
+    //         products.map(item => {
+    //             return result = (item.price + result) * item.qtyy
+    //         } )         
         
-        return result    
-        } else {
-            return 1
-        }
+    //     return result    
+    //     } else {
+    //         return 1
+    //     }
             
-    }
+    // }
+
+    // console.log(totalPrice())
 
     return (
         <>
@@ -46,7 +60,7 @@ const Mybag = ({ match }) => {
                                 <Leftside
                                     key={item.id}
                                     id={item.id}
-                                    qty={item.qty}
+                                    qtyy={item.qtyy}
                                     name={item.name}
                                     price={item.price}
                                     image={item.image}
@@ -60,7 +74,7 @@ const Mybag = ({ match }) => {
                             // id={cartItem.id}
                             // qty={cartItem.qty}
                             // name={cartItem.name}
-                            price={totalPrice(cartItem)}
+                            price={totalPrice}
                             // image={cartItem.image}
                             // description={cartItem.description}
                         />

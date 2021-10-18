@@ -13,6 +13,7 @@ const Rightside = (props) => {
     console.log(props.totalPrice) 
     const cart = useSelector(state => state.cart)
     const { cartItem } = cart
+
     
         return (
 

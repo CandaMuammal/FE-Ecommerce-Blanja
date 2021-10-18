@@ -26,7 +26,7 @@ const Checkout = () => {
     const username = localStorage.getItem('username')
     const phone = localStorage.getItem('phoneNumber')
 
-
+    
     // const { cartItem } = cart
     // let payload = {}
     
@@ -39,14 +39,19 @@ const Checkout = () => {
     })
 
     const totalPrice = checkout.reduce(function(val, element) {
-        return val + element.price
+        return val + (element.price*element.qtyy)
     }, 0)
 
     const totalQty = checkout.reduce(function(val, element) {
-        return val + element.qty
+        return val + element.qtyy
     }, 0)
 
+    console.log(totalQty)
     console.log(totalPrice)
+
+    // const totalPayments = totalPrice * totalQty
+
+    // console.log(totalPayments)
 
     let allname = ""
     if (checkout.length > 0) {
@@ -112,7 +117,7 @@ const Checkout = () => {
                             <Leftsides
                                 key={item.id}
                                 id={item.id}
-                                qty={item.qty}
+                                qtyy={item.qtyy}
                                 name={item.name}
                                 price={item.price}
                                 image={item.image}
@@ -123,7 +128,9 @@ const Checkout = () => {
 
                         <Rightside 
                         onClick={handlePayment}
+                        // totalPrice={totalPrice}
                         totalPrice={totalPrice}
+
                         />
                     </div>
                 </div>

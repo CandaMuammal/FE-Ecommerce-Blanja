@@ -19,22 +19,37 @@ import 'react-toastify/dist/ReactToastify.css'
 
 toast.configure()
 
-const ProductBody = ({id, name, image, price, description}) => {
-const [qty, setQty] = useState(1)
+const ProductBody = ({ id, name, image, price, description }) => {
 
-const history = useHistory()
 
-const dispatch = useDispatch()
+ const [form, setForm] = useState({
+     qty: 1
+ })
 
-const addToCartHandle = () => {
-    try {
-        dispatch(addToCart( {id, qty, name, price, image, description}, history))
-        history.push("/mybag");
-    } catch {
-        toast('cannot add product')
+const handleChange = (e) => {
+        let data = {...form}
+        data[e.target.name] = e.target.value
+        setForm(data)
+
     }
-}
-    return ( 
+
+    console.log(form.qty)
+
+    const qtyy = parseInt(form.qty)
+
+    const history = useHistory()
+
+    const dispatch = useDispatch()
+
+    const addToCartHandle = () => {
+        try {
+            dispatch(addToCart({ id, name, price, image, description, qtyy }, history))
+            history.push("/mybag");
+        } catch {
+            toast('cannot add product')
+        }
+    }
+    return (
 
         <div className={style.container}>
             <div class={style.container1}>
@@ -42,7 +57,7 @@ const addToCartHandle = () => {
                     <div class={style.box1}>
                         <img src={image} alt="" />
                     </div>
-                    
+
                 </div>
                 <div class={style.right}>
                     <div class={style.name}>
@@ -83,7 +98,8 @@ const addToCartHandle = () => {
                             <h5>Jumlah</h5>
                             <div class={style.plusminus}>
                                 {/* <button class={style.minus}><img src={minus} alt="" /></button> */}
-                                <h5>1</h5>
+                                {/* <h5>1</h5> */}
+                                <input type="number" name="qty" value={form.qty} onChange={handleChange} />
                                 {/* <button class={style.plus}><img src={plus} alt="" /></button> */}
                             </div>
                         </div>
@@ -98,60 +114,60 @@ const addToCartHandle = () => {
             <hr />
             <div class={style.container2}>
                 <div className={style.info}>
-                <h2>Informasi produk</h2>
-                <h5>Condition <br /><br /> <span>New</span></h5>
-                <h5>{description}</h5>
+                    <h2>Informasi produk</h2>
+                    <h5>Condition <br /><br /> <span>New</span></h5>
+                    <h5>{description}</h5>
                 </div>
                 <div class={style.container3}>
-                <h2>Produk Review</h2>
-                <div class={style.review}>
-                    <div class={style.total}>
-                        <h1>5.0<span>/10</span></h1>
-                        <div class={style["total-star"]}>
-                            <img src={star} alt="" />
-                            <img src={star} alt="" />
-                            <img src={star} alt="" />
-                            <img src={star} alt="" />
-                            <img src={star} alt="" />
+                    <h2>Produk Review</h2>
+                    <div class={style.review}>
+                        <div class={style.total}>
+                            <h1>5.0<span>/10</span></h1>
+                            <div class={style["total-star"]}>
+                                <img src={star} alt="" />
+                                <img src={star} alt="" />
+                                <img src={star} alt="" />
+                                <img src={star} alt="" />
+                                <img src={star} alt="" />
+                            </div>
                         </div>
-                    </div>
-                    <div class={style["star-review"]}>
-                        <div class={style.star5}>
-                            <img src={star} alt="" />
-                            <h5>5</h5>
-                            <hr />
-                            <h5>4</h5>
-                        </div>
-                        <div class={style.star4}>
-                            <img src={star} alt="" />
-                            <h5>4</h5>
-                            <hr />
-                            <h5>0</h5>
-                        </div>
-                        <div class={style.star3}>
-                            <img src={star} alt="" />
-                            <h5>3</h5>
-                            <hr />
-                            <h5>0</h5>
-                        </div>
-                        <div class={style.star2}>
-                            <img src={star} alt="" />
-                            <h5>2</h5>
-                            <hr />
-                            <h5>0</h5>
-                        </div>
-                        <div class={style.star1}>
-                            <img src={star} alt="" />
-                            <h5>1 </h5>
-                            <hr />
-                            <h5>0</h5>
+                        <div class={style["star-review"]}>
+                            <div class={style.star5}>
+                                <img src={star} alt="" />
+                                <h5>5</h5>
+                                <hr />
+                                <h5>4</h5>
+                            </div>
+                            <div class={style.star4}>
+                                <img src={star} alt="" />
+                                <h5>4</h5>
+                                <hr />
+                                <h5>0</h5>
+                            </div>
+                            <div class={style.star3}>
+                                <img src={star} alt="" />
+                                <h5>3</h5>
+                                <hr />
+                                <h5>0</h5>
+                            </div>
+                            <div class={style.star2}>
+                                <img src={star} alt="" />
+                                <h5>2</h5>
+                                <hr />
+                                <h5>0</h5>
+                            </div>
+                            <div class={style.star1}>
+                                <img src={star} alt="" />
+                                <h5>1 </h5>
+                                <hr />
+                                <h5>0</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
 
-            
+
         </div>
 
     )
