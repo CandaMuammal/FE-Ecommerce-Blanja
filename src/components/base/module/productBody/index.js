@@ -99,7 +99,7 @@ const handleChange = (e) => {
                             <div class={style.plusminus}>
                                 {/* <button class={style.minus}><img src={minus} alt="" /></button> */}
                                 {/* <h5>1</h5> */}
-                                <input type="number" name="qty" value={form.qty} onChange={handleChange} />
+                                <input type="number" name="qty" value={form.qty} onChange={handleChange} min="1" />
                                 {/* <button class={style.plus}><img src={plus} alt="" /></button> */}
                             </div>
                         </div>
