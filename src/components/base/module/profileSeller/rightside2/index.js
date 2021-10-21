@@ -166,7 +166,7 @@ const Rightside2 = ({ match }) => {
                     <div className={style.header}>
                         My Products
                     </div>
-                    <input type="radio" name="slider" className={style.radio} id={style.all} checked />
+                    {/* <input type="radio" name="slider" className={style.radio} id={style.all} checked />
                     <input type="radio" name="slider" className={style.radio} id={style.sold} />
                     <input type="radio" name="slider" className={style.radio} id={style.archieved} />
 
@@ -178,13 +178,13 @@ const Rightside2 = ({ match }) => {
 
                         <div className={style.slider}></div>
                     </div>
-                    <div className={style.horizontal}></div>
+                    <div className={style.horizontal}></div> */}
 
                 </div>
-                <div className={style.searchitem}>
+                {/* <div className={style.searchitem}>
                     <input type="text" placeholder="Search" />
                     <img src={search} alt="" />
-                </div>
+                </div> */}
                 <div className={style.body}>
                     {/* <div className={style.bodyhead}>
                             <div className={style.name}>Product name</div>
