@@ -19,16 +19,9 @@ toast.configure()
 const Rightside3 = () => {
     const history = useHistory()
 
-
     const dispatch = useDispatch()
 
     const  product = useSelector(state => state.product.productDetails)
-
-    // useEffect(() => {
-    //     dispatch(getProduct())
-    // }, [dispatch])
-
- 
 
     console.log(product.name)
 
@@ -47,9 +40,6 @@ const Rightside3 = () => {
        console.log(product)
     }, [product])
 
-
-    // const item = product.map()
-    // console.log(item)
 
     const [form, setForm] = useState({
         name: product.name,
@@ -75,7 +65,7 @@ const Rightside3 = () => {
         if (e.target.files) {
             setForm({
                 ...form,
-                image: e.target.files,
+                image: e.target.files[0],
                 imagePreview: URL.createObjectURL(e.target.files[0])
             })
         } else {
@@ -104,11 +94,12 @@ const Rightside3 = () => {
             .then((res) => {
                 toast('success add product')
                 history.push('/home')
+                console.log(form.image)
             })
             .catch(() => {
                 toast('failed')
             })
-    }
+    } 
 
     const handleUpdate = (e) => {
         e.preventDefault()
@@ -127,6 +118,7 @@ const Rightside3 = () => {
         axios.put(`${process.env.REACT_APP_API_URL}v1/product/${product.id}`, formData)
             .then((res) => {
                 toast('success updated product')
+                console.log(form.image)
                 history.push('/home')
 
             })
@@ -209,47 +201,5 @@ const Rightside3 = () => {
     )
 
 }
-
-// componentDidMount() {
-//     const url = '${process.env.REACT_APP_API_URL}product'
-//     const dataProduct = {
-//                 name: this.state.name,
-//                 price: this.state.price,
-//                 stock: this.state.stock,
-//     }
-
-//     axios.get(url)
-//         .then(product => {
-//             console.log(product.data.data)
-
-//             this.setState({
-//                 product: product.data.data
-//             })
-
-
-//         })
-
-//     
-
-
-
-// }
-
-// saveToAPI(e) {
-//     e.preventDefault()
-//     const urlAPI = '${process.env.REACT_APP_API_URL}product'
-//     const dataProduct = {
-//         name: this.state.name,
-//         price: this.state.price,
-//         stock: this.state.stock, 
-//         // descrtiption: this.state.description
-//     }
-//     axios.post(urlAPI, dataProduct)
-//     console.log(dataProduct)
-// }
-
-
-
-
 
 export default Rightside3

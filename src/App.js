@@ -169,7 +169,12 @@ import SignupSeller from './Pages/Auth/Seller/Signup'
 import Home from './Pages/Main/Home';
 import Product from './Pages/Main/Product';
 import Search from './Pages/Main/Search';
-import Category from './Pages/Main/Category';
+import Tshirt from './Pages/Main/Tshirt';
+import Cap from './Pages/Main/Cap';
+import Pants from './Pages/Main/Pants';
+import Glasses from './Pages/Main/Glasses';
+import Jacket from './Pages/Main/Jacket';
+import Shoes from './Pages/Main/Shoes';
 // import style from './Pages/Auth/Customer/Login/'
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
 import PrivateRoute from './configs/route/privateRoute';
@@ -185,10 +190,12 @@ import ProfileSeller1 from './Pages/Profile/ProfileSeller/Profile1';
 import ProfileSeller2 from './Pages/Profile/ProfileSeller/Profile2';
 import ProfileSeller3 from './Pages/Profile/ProfileSeller/Profile3';
 import ProfileSeller4 from './Pages/Profile/ProfileSeller/Profile4';
+import ScrollToTop from './scroll'
 
 const App = () => {
   return(
     <BrowserRouter>
+<ScrollToTop/>
       <Switch>
         <PublicRoute path="/login" component={Login} />
         <PublicRoute path="/signup" component={Signup} />
@@ -201,7 +208,12 @@ const App = () => {
         {/* <PrivateRoute path="/" component={Home} /> */}
         <PrivateRoute path="/product/:id" component={Product} />
         <PrivateRoute path="/search" component={Search} />
-        <PrivateRoute path="/category" component={Category} />
+        <PrivateRoute path="/tshirt" component={Tshirt} />
+        <PrivateRoute path="/cap" component={Cap} />
+        <PrivateRoute path="/shoes" component={Shoes} />
+        <PrivateRoute path="/pants" component={Pants} />
+        <PrivateRoute path="/glasses" component={Glasses} />
+        <PrivateRoute path="/jacket" component={Jacket} />
         <PrivateRoute path="/checkout" component={Checkout} />
         <PrivateRoute path="/mybag" component={Mybag} />
         <CustomerRoute path="/profilecustomer1" component={ProfileCust1} />
@@ -212,6 +224,8 @@ const App = () => {
         <Route path="/profileseller3" component={ProfileSeller3} />
         <SellerRoute path="/profileseller4" component={ProfileSeller4} />
       </Switch>
+{/* </ScrollToTop> */}
+
     </BrowserRouter>
   )
 }

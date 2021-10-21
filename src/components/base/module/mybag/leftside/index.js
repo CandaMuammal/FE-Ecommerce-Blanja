@@ -26,7 +26,7 @@ const Leftside = ({id, qtyy, name, price, image, description}) => {
                     </div> */}
                     <div className={style.leftbox2}>
                         <div className={style.check}>
-                            <input type="checkbox" name="" id=""/>
+                            {/* <input type="checkbox" name="" id=""/> */}
                         </div>
                         <div className={style.picture}>
                             <img src={image} alt=""/>

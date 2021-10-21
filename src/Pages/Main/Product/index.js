@@ -10,57 +10,7 @@ import { getProduct as listProduct } from '../../../configs/redux/actions/produc
 import { getProductDetail } from '../../../configs/redux/actions/productAction'
 import { addToCart } from '../../../configs/redux/actions/cartActions'
 
-// export default class Product extends Component {
-//     constructor(props) {
-//         super(props)
 
-//         this.state = {
-//             product: []
-//         }
-//     }
-
-//     componentDidMount() {
-//         axios.get('http://localhost:4000/product/')
-//             .then(res => {
-//                 const product = res.data.data
-//                 this.setState({ product })
-//             })
-//             .catch(error => {
-//                 console.log(error)
-//             })
-//     }
-
-//     render() {
-//         // console.log(this.state.product)
-//         const { product } = this.state
-//         return (
-//             <>
-//                 <Navbar />
-//                 <div className={style.main}>
-//                     <div className={style["main-wrap"]}>
-//                         <div className={style["main-container"]}>
-//                             <ProductBody />
-//                             <div className={style["card-wrap"]}>
-//                                 <h2>You can also like this</h2>
-//                                 <h5>You've never seen
-//  it before</h5>
-//                                 <div className={style.cardwrapper}>
-//                                     {product && product.map((products) => (
-//                                         <Cards
-//                                             key={products.id}
-//                                             products={products}
-//                                         />
-//                                     ))}
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </>
-//         )
-//     }
-// }
- 
 const Product = ({ match}) => {
 
     // const [qty, setQty] = useState(1)
@@ -82,40 +32,9 @@ const Product = ({ match}) => {
         
     }, [dispatch, match])
 
+    console.log(productDetails.price)
+
     
-
-
-//     const productName = product.map(item => {
-//         const name = item.name
-//         console.log(item)
-//         return name
-//     })
-
-//     const productId = product.map(item => {
-//         const id = item.id
-//         return id
-//     })
-
-//     const productImage = product.map(item => {
-//         const image = item.image
-//         return image
-//     })
-
-//     const productDescription = product.map(item => {
-//         const description = item.description
-//        return description
-//   })
-//   const productPrice = product.map(item => {
-//     const price = item.price
-//    return price
-// })
-
-
-    // console.log(productName)
-    // console.log(productImage)
-    // console.log(productId)
-    // console.log(productDescription)
- 
     return (
         <>
             <Navbar />
@@ -126,8 +45,11 @@ const Product = ({ match}) => {
                         key={productDetails.id}
                         id={productDetails.id}
                         name={productDetails.name}
+                        size={productDetails.size}
                         price={productDetails.price}
                         image={productDetails.image}
+                        color={productDetails.color}
+                        stock={productDetails.stock}
                         description={productDetails.description}
                         />
                     </div>

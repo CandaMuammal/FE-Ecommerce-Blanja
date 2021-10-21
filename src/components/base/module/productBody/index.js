@@ -19,7 +19,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 toast.configure()
 
-const ProductBody = ({ id, name, image, price, description }) => {
+const ProductBody = ({ id, name, image, price, description, color, stock, size }) => {
 
 
  const [form, setForm] = useState({
@@ -33,6 +33,7 @@ const handleChange = (e) => {
 
     }
 
+    console.log(price)
     console.log(form.qty)
 
     const qtyy = parseInt(form.qty)
@@ -78,19 +79,20 @@ const handleChange = (e) => {
                     </div>
                     <div class={style.color}>
                         <h5>Color</h5>
-                        <div class={style.colorbutton}>
+                        <h3>{color}</h3>
+                        {/* <div class={style.colorbutton}>
                             <button id={style.black}></button>
                             <button id={style.red}></button>
                             <button id={style.blue}></button>
                             <button id={style.green}></button>
-                        </div>
+                        </div> */}
                     </div>
                     <div class={style.sizing}>
                         <div class={style.size}>
                             <h5>Size</h5>
                             <div class={style.plusminus}>
                                 {/* <button class={style.minus}><img src={minus} alt="" /></button> */}
-                                <h5>L</h5>
+                                <h5>{size}</h5>
                                 {/* <button class={style.plus}><img src={plus} alt="" /></button> */}
                             </div>
                         </div>
@@ -99,7 +101,7 @@ const handleChange = (e) => {
                             <div class={style.plusminus}>
                                 {/* <button class={style.minus}><img src={minus} alt="" /></button> */}
                                 {/* <h5>1</h5> */}
-                                <input type="number" name="qty" value={form.qty} onChange={handleChange} min="1" />
+                                <input type="number" name="qty" value={form.qty} onChange={handleChange} min="1" max={stock}/>
                                 {/* <button class={style.plus}><img src={plus} alt="" /></button> */}
                             </div>
                         </div>
