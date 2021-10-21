@@ -205,6 +205,7 @@ const App = () => {
         <PublicRoute path="/loginseller" component={LoginSeller} />
         <PublicRoute path="/signupseller" component={SignupSeller} />
         <PrivateRoute path="/home" component={Home} />
+        <PublicRoute path="/" component={Login} />
         {/* <PrivateRoute path="/" component={Home} /> */}
         <PrivateRoute path="/product/:id" component={Product} />
         <PrivateRoute path="/search" component={Search} />
