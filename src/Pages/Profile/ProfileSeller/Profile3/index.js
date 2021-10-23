@@ -21,6 +21,8 @@ const ProfileSeller3 = ({ match }) => {
         dispatch(getProduct())
     }, [dispatch])
 
+    const prods = ""
+
     // const productDetail = product.map(item => {
     //     returm
     // })
