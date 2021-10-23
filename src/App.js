@@ -115,7 +115,7 @@
 //     }
 //     setTasks([...tasks, newTask])
 //     setCurrentValue('')
-      
+
 //   }
 //   return <div>
 //     <input type="text" value={currentValue} onChange={event => setCurrentValue(event.target.value)}/>
@@ -159,6 +159,7 @@
 // export default App
 
 import React from 'react';
+import Redirec from './Pages/Auth/redirect';
 import Login from './Pages/Auth/Customer/Login/index'
 import Signup from './Pages/Auth/Customer/Signup/index'
 import ResetPassword from './Pages/Auth/Customer/ResetPassword/index'
@@ -176,7 +177,7 @@ import Glasses from './Pages/Main/Glasses';
 import Jacket from './Pages/Main/Jacket';
 import Shoes from './Pages/Main/Shoes';
 // import style from './Pages/Auth/Customer/Login/'
-import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import PrivateRoute from './configs/route/privateRoute';
 import PublicRoute from './configs/route/publicRoute';
 import SellerRoute from './configs/route/sellerRoute';
@@ -193,38 +194,38 @@ import ProfileSeller4 from './Pages/Profile/ProfileSeller/Profile4';
 import ScrollToTop from './scroll'
 
 const App = () => {
-  return(
+  return (
     <BrowserRouter>
-<ScrollToTop/>
+      <ScrollToTop />
       <Switch>
-      <PublicRoute path="/" component={Login} />
-        <PublicRoute path="/login" component={Login} />
-        <PublicRoute path="/signup" component={Signup} />
-        <PublicRoute path="/resetpassword" component={ResetPassword} />
-        <PublicRoute path="/confirmpassword" component={ConfirmPassword} />
-        <PublicRoute path="/confirmreset" component={ConfirmReset} />
-        <PublicRoute path="/loginseller" component={LoginSeller} />
-        <PublicRoute path="/signupseller" component={SignupSeller} />
-        <PrivateRoute path="/home" component={Home} />
-        <PrivateRoute path="/product/:id" component={Product} />
-        <PrivateRoute path="/search" component={Search} />
-        <PrivateRoute path="/tshirt" component={Tshirt} />
-        <PrivateRoute path="/cap" component={Cap} />
-        <PrivateRoute path="/shoes" component={Shoes} />
-        <PrivateRoute path="/pants" component={Pants} />
-        <PrivateRoute path="/glasses" component={Glasses} />
-        <PrivateRoute path="/jacket" component={Jacket} />
-        <PrivateRoute path="/checkout" component={Checkout} />
-        <PrivateRoute path="/mybag" component={Mybag} />
-        <CustomerRoute path="/profilecustomer1" component={ProfileCust1} />
-        {/* <CustomerRoute path="/profilecustomer2" component={ProfileCust2} /> */}
-        <CustomerRoute path="/profilecustomer3" component={ProfileCust3} />
-        <SellerRoute path="/profileseller1" component={ProfileSeller1} />
-        <SellerRoute path="/profileseller2" component={ProfileSeller2} />
-        <Route path="/profileseller3" component={ProfileSeller3} />
-        <SellerRoute path="/profileseller4" component={ProfileSeller4} />
+        <PublicRoute exact path="/" component={Login} />
+        <PublicRoute exact path="/login" component={Login} />
+        <PublicRoute exact path="/signup" component={Signup} />
+        <PublicRoute exact path="/resetpassword" component={ResetPassword} />
+        <PublicRoute exact path="/confirmpassword" component={ConfirmPassword} />
+        <PublicRoute exact path="/confirmreset" component={ConfirmReset} />
+        <PublicRoute exact path="/loginseller" component={LoginSeller} />
+        <PublicRoute exact path="/signupseller" component={SignupSeller} />
+        <PrivateRoute exact path="/home" component={Home} />
+        <PrivateRoute exact path="/product/:id" component={Product} />
+        <PrivateRoute exact path="/search" component={Search} />
+        <PrivateRoute exact path="/tshirt" component={Tshirt} />
+        <PrivateRoute exact path="/cap" component={Cap} />
+        <PrivateRoute exact path="/shoes" component={Shoes} />
+        <PrivateRoute exact path="/pants" component={Pants} />
+        <PrivateRoute exact path="/glasses" component={Glasses} />
+        <PrivateRoute exact path="/jacket" component={Jacket} />
+        <PrivateRoute exact path="/checkout" component={Checkout} />
+        <PrivateRoute exact path="/mybag" component={Mybag} />
+        <CustomerRoute exact path="/profilecustomer1" component={ProfileCust1} />
+        {/* <CustomerRoute exact path="/profilecustomer2" component={ProfileCust2} /> */}
+        <CustomerRoute exact path="/profilecustomer3" component={ProfileCust3} />
+        <SellerRoute exact path="/profileseller1" component={ProfileSeller1} />
+        <SellerRoute exact path="/profileseller2" component={ProfileSeller2} />
+        <Route exact path="/profileseller3" component={ProfileSeller3} />
+        <SellerRoute exact path="/profileseller4" component={ProfileSeller4} />
       </Switch>
-{/* </ScrollToTop> */}
+      {/* </ScrollToTop> */}
 
     </BrowserRouter>
   )
