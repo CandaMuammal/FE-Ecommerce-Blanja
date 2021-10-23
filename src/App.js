@@ -197,6 +197,7 @@ const App = () => {
     <BrowserRouter>
 <ScrollToTop/>
       <Switch>
+      <PublicRoute path="/" component={Login} />
         <PublicRoute path="/login" component={Login} />
         <PublicRoute path="/signup" component={Signup} />
         <PublicRoute path="/resetpassword" component={ResetPassword} />
@@ -205,8 +206,6 @@ const App = () => {
         <PublicRoute path="/loginseller" component={LoginSeller} />
         <PublicRoute path="/signupseller" component={SignupSeller} />
         <PrivateRoute path="/home" component={Home} />
-        <PublicRoute path="/" component={Login} />
-        {/* <PrivateRoute path="/" component={Home} /> */}
         <PrivateRoute path="/product/:id" component={Product} />
         <PrivateRoute path="/search" component={Search} />
         <PrivateRoute path="/tshirt" component={Tshirt} />
