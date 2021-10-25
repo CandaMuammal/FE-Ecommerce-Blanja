@@ -24,7 +24,7 @@ const ProductBody = ({ id, name, image, price, description, color, stock, size }
 const [count, setCount] = useState(1)
 
  const [form, setForm] = useState({
-     qty: count
+     qty: 0 < count <= stock
  })
 
 const handleChange = (e) => {
@@ -33,6 +33,16 @@ const handleChange = (e) => {
         setForm(data)
 
     }
+
+    const onIncrease = () => {
+        let value = Math.min(count + 1, stock)
+        setCount(value)
+      };
+      
+     const  onDecrease = () => {
+          let value = Math.max(count - 1, 1)
+          setCount(value)
+      };
 
     console.log(price)
     console.log(form.qty)
@@ -100,10 +110,10 @@ const handleChange = (e) => {
                         <div class={style.qty}>
                             <h5>Jumlah</h5>
                             <div class={style.plusminus}>
-                                <button class={style.minus} onClick={() => setCount(count - 1)}><img src={minus} alt="" /></button>
+                                <button class={style.minus} onClick={onDecrease}><img src={minus} alt="" /></button>
                                 <h5>{count}</h5>
-                                {/* <input type="number" name="qty" value={form.qty} onChange={handleChange} min="1" max={stock}/> */}
-                                <button class={style.plus} onClick={() => setCount(count + 1)}><img src={plus} alt="" /></button>
+                                {/* <input type="number" name="qty" value={count} onChange={handleChange} min="1" max={stock}/> */}
+                                <button class={style.plus} onClick={onIncrease}><img src={plus} alt="" /></button>
                             </div>
                         </div>
                     </div>
