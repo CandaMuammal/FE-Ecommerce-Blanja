@@ -107,7 +107,7 @@ const handleChange = (e) => {
                         </div>
                     </div>
                     <div class={style.button}>
-                        <button id={style.chat}>Chat</button>
+                        <button id={style.chat} disabled="true">Chat</button>
                         <button id={style["add-bag"]} onClick={addToCartHandle}>Add bag</button>
                         {/* <button id={style.buy}>Buy now</button> */}
                     </div>

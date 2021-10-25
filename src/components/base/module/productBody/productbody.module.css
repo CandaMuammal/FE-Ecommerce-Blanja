@@ -18,8 +18,8 @@ h5 a {
     height: 650px;
     display: flex;
     flex-direction: row; 
-    margin-bottom: 50px;
-    margin-top: 30px;
+    margin-bottom: 0px;
+    margin-top: 50px;
 }
 
 
@@ -162,6 +162,11 @@ h5 a {
     height: 36px;
 }
 
+.plusminus input {
+    height: 35px;
+    width: 55px;
+}
+
 .button {
     width: 60% ;
 }
@@ -174,6 +179,12 @@ h5 a {
     border-radius: 30px;
     border: 1px solid black;
     align-items: center;
+
+}
+
+.button #add-bag:hover {
+    background-color: #DB3022;
+    color: white;
 }
 
 .button #buy {
