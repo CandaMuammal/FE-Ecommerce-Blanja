@@ -21,9 +21,10 @@ toast.configure()
 
 const ProductBody = ({ id, name, image, price, description, color, stock, size }) => {
 
+const [count, setCount] = useState(1)
 
  const [form, setForm] = useState({
-     qty: 1
+     qty: count
  })
 
 const handleChange = (e) => {
@@ -36,7 +37,7 @@ const handleChange = (e) => {
     console.log(price)
     console.log(form.qty)
 
-    const qtyy = parseInt(form.qty)
+    const qtyy = parseInt(count)
 
     const history = useHistory()
 
@@ -99,10 +100,10 @@ const handleChange = (e) => {
                         <div class={style.qty}>
                             <h5>Jumlah</h5>
                             <div class={style.plusminus}>
-                                {/* <button class={style.minus}><img src={minus} alt="" /></button> */}
-                                {/* <h5>1</h5> */}
-                                <input type="number" name="qty" value={form.qty} onChange={handleChange} min="1" max={stock}/>
-                                {/* <button class={style.plus}><img src={plus} alt="" /></button> */}
+                                <button class={style.minus} onClick={() => setCount(count - 1)}><img src={minus} alt="" /></button>
+                                <h5>{count}</h5>
+                                {/* <input type="number" name="qty" value={form.qty} onChange={handleChange} min="1" max={stock}/> */}
+                                <button class={style.plus} onClick={() => setCount(count + 1)}><img src={plus} alt="" /></button>
                             </div>
                         </div>
                     </div>

@@ -130,6 +130,10 @@ h5 a {
     width: 50%;
 }
 
+.size h5 {
+    margin-bottom: 15px;
+}
+
 .qty {
     width: 50%;
     display: flex;
@@ -160,6 +164,10 @@ h5 a {
     width: 36px;
     cursor: pointer;
     height: 36px;
+}
+
+.plusminus h5 {
+    margin: 0 10px;
 }
 
 .plusminus input {

@@ -11,7 +11,7 @@ const Rightside4 = () => {
 
     const [history, setHistory] = useState()
     const [page, setPage] = useState(1)
-    const [pageSize, setPageSize] = useState(2)
+    const [pageSize, setPageSize] = useState(8)
 
     const columns = [
         {

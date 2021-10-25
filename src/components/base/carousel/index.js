@@ -26,7 +26,9 @@ const Carousels = () => {
 
   const breakPoint2 = [
     { width: 576, itemsToShow: 2 },
-    { width: 1000, itemsToShow: 6 }
+    { width: 676, itemsToShow: 3 },
+    { width: 800, itemsToShow: 4 },
+    { width: 1000, itemsToShow: 5 }
   ]
   return (
     <div className={style.wrapper}>

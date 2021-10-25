@@ -11,7 +11,7 @@ const Rightside3 = () => {
 
     const [history, setHistory] = useState()
     const [page, setPage] = useState(1)
-    const [pageSize, setPageSize] = useState(2)
+    const [pageSize, setPageSize] = useState(9)
     const username = localStorage.getItem('username')
 
     const columns = [
