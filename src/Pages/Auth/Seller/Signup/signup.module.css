@@ -52,8 +52,12 @@ button a {
     text-decoration: none;
 }
 
-.option-button .customer:checked, .option-button .seller:checked  {
+.option-button .seller  {
     background: #DB3022;
+    color: white;
+}
+
+.seller a {
     color: white;
 }
 

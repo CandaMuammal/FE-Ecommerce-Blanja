@@ -103,7 +103,7 @@ const Rightside1 = () => {
                             </div>
                             <div className={style.address}>
                                 <label for="address">Address</label>
-                                <textarea name="address" value={form.address} onChange={handleChange} placeholder="DD/MM/YYYY" id="phone" />
+                                <textarea name="address" value={form.address} onChange={handleChange} placeholder="Enter your current address.." id="phone" />
                             </div>
                         {/* </form> */}
                         <button className={style.save} onClick={handleSubmit}>Save</button>

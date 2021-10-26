@@ -45,17 +45,24 @@
     height: 48px;
     background: white;
     border: 1px solid #DB3022;
-    color: black;
+    /* color: black; */
 }
 
 button a {
     color: black;
 }
 
-.option-button .customer:checked, .option-button .seller:checked  {
+.option-button .customer  {
     background: #DB3022;
     color: white;
-    
+}
+
+.customer a {
+    color: white;
+}
+
+.option-button .seller:checked {
+
 }
 
 form {
